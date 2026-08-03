@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R-Holding — Une vision multi-activités au Mali | Rouski-Holding SARL</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Rouski-Holding SARL (R-Holding) — société holding multi-activités basée à Bamako, Mali. Restauration rapide, développement d'applications web, cargo, commerce général (import-export), agence de sécurité, biens et services, ressources naturelles.">
+  <meta name="keywords" content="R-Holding, Rouski-Holding, holding, Mali, Bamako, restauration rapide, applications web, cargo, import export, agence de sécurité, commerce général, RChicken, Solo, RMarket">
+  <meta name="author" content="Rouski-Holding SARL">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#12100e">
+  <link rel="canonical" href="https://www.r-holding.ml/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="R-Holding — Une vision multi-activités au Mali">
+  <meta property="og:description" content="Société holding multi-activités basée à Bamako, Mali. Développement web, restauration rapide, cargo, commerce général, sécurité et plus encore.">
+  <meta property="og:site_name" content="R-Holding">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="R-Holding — Une vision multi-activités au Mali">
+  <meta name="twitter:description" content="Société holding multi-activités basée à Bamako, Mali.">
+
+  <!-- Favicon emoji -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏢</text></svg>">
+
+  <!-- Police Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD : organisation -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Rouski-Holding SARL",
+    "alternateName": "R-Holding",
+    "foundingDate": "2026",
+    "founder": "Issouf Mahamadou Sidibe",
+    "email": "intersidibe2@gmail.com",
+    "telephone": "+22383806129",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Quartier Bacodjocoroni Golf, Rue 101, Porte 31",
+      "addressLocality": "Bamako",
+      "addressCountry": "ML"
+    },
+    "identifier": [
+      { "@type": "PropertyValue", "name": "NINA", "value": "425900105010002T0002D" },
+      { "@type": "PropertyValue", "name": "RCCM", "value": "ML.BKO.01.2026.B.3759" }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #12100e;
+      --bg-soft: #1a1713;
+      --bg-card: #1e1a15;
+      --accent: #c48b3f;
+      --accent-light: #e0a85f;
+      --accent-grad: linear-gradient(135deg, #e0a85f 0%, #c48b3f 50%, #a06a2a 100%);
+      --text: #f2ede4;
+      --text-muted: #b3ab9d;
+      --border: rgba(196, 139, 63, 0.18);
+      --radius: 16px;
+      --shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+      --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--accent); color: #12100e; }
+
+    a { color: var(--accent); text-decoration: none; transition: color .2s ease; }
+    a:hover { color: var(--accent-light); }
+
+    img, svg { max-width: 100%; display: block; }
+
+    /* ---------- Navigation ---------- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(18, 16, 14, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--text);
+      letter-spacing: 0.5px;
+    }
+
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: var(--accent-grad);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: #12100e;
+      font-size: 1.05rem;
+      box-shadow: 0 4px 18px rgba(196, 139, 63, 0.35);
+    }
+
+    .logo span em { font-style: normal; color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      padding: 4px 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-grad);
+      transition: width .25s ease;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--accent-grad);
+      color: #12100e;
+      font-weight: 700;
+      padding: 11px 22px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+      box-shadow: 0 6px 24px rgba(196, 139, 63, 0.35);
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-2px);
+      color: #12100e;
+      filter: brightness(1.08);
+      box-shadow: 0 10px 30px rgba(196, 139, 63, 0.5);
+    }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 110;
+    }
+
+    .burger span {
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform .3s ease, opacity .3s ease;
+    }
+
+    .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 96px 20px 80px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -40% -20% auto -20%;
+      height: 90%;
+      background:
+        radial-gradient(closest-side, rgba(196, 139, 63, 0.28), transparent 70%),
+        radial-gradient(closest-side, rgba(196, 139, 63, 0.12), transparent 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      background: rgba(196, 139, 63, 0.08);
+      color: var(--accent-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 6vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      max-width: 760px;
+      margin: 0 auto 18px;
+    }
+
+    .hero h1 .gold {
+      background: var(--accent-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 640px;
+      margin: 0 auto 34px;
+      color: var(--text-muted);
+      font-size: 1.08rem;
+    }
+
+    .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-weight: 600;
+      padding: 11px 22px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      transition: border-color .2s ease, background .2s ease;
+    }
+
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent-light); background: rgba(196,139,63,0.06); }
+
+    .hero-stats {
+      margin-top: 56px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .stat {
+      background: rgba(30, 26, 21, 0.6);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 12px;
+    }
+
+    .stat b { font-size: 1.4rem; font-weight: 800; background: var(--accent-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .stat small { display: block; color: var(--text-muted); font-size: 0.8rem; margin-top: 4px; }
+
+    /* ---------- Sections génériques ---------- */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 48px;
+    }
+
+    .section-head .kicker {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-head p { color: var(--text-muted); }
+
+    .divider {
+      width: 64px;
+      height: 3px;
+      background: var(--accent-grad);
+      border-radius: 3px;
+      margin: 0 auto 24px;
+    }
+
+    /* ---------- À propos ---------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .about-text p { color: var(--text-muted); margin-bottom: 16px; }
+    .about-text p strong { color: var(--text); font-weight: 600; }
+
+    .about-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .legal-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--border);
+      font-size: 0.92rem;
+    }
+
+    .legal-row:last-child { border-bottom: none; }
+    .legal-row span { color: var(--text-muted); flex-shrink: 0; }
+    .legal-row b { text-align: right; font-weight: 600; word-break: break-word; }
+
+    /* ---------- Activités ---------- */
+    .activities-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--accent-grad);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .35s ease;
+    }
+
+    .card:hover { transform: translateY(-6px); border-color: rgba(196, 139, 63, 0.45); box-shadow: var(--shadow); }
+    .card:hover::before { transform: scaleX(1); }
+
+    .card .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 1.7rem;
+      background: rgba(196, 139, 63, 0.1);
+      border: 1px solid var(--border);
+      margin-bottom: 18px;
+    }
+
+    .card h3 { font-size: 1.1rem; margin-bottom: 8px; font-weight: 700; }
+    .card p { color: var(--text-muted); font-size: 0.94rem; }
+
+    /* ---------- Marques ---------- */
+    .brands-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .brand-card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px 24px;
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .brand-card:hover { transform: translateY(-6px); border-color: rgba(196, 139, 63, 0.45); box-shadow: var(--shadow); }
+
+    .brand-logo {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .brand-logo .dot { color: var(--accent); }
+
+    .brand-card .domain { color: var(--accent); font-size: 0.85rem; margin-bottom: 12px; }
+
+    .brand-card p { color: var(--text-muted); font-size: 0.94rem; flex: 1; }
+
+    .brand-link {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .brand-link::after { content: "→"; transition: transform .2s ease; }
+    .brand-link:hover::after { transform: translateX(4px); }
+
+    /* ---------- Contact ---------- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      transition: border-color .3s ease, transform .3s ease;
+    }
+
+    .contact-card:hover { border-color: rgba(196, 139, 63, 0.45); transform: translateY(-3px); }
+
+    .contact-card .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      background: rgba(196, 139, 63, 0.1);
+      border: 1px solid var(--border);
+    }
+
+    .contact-card h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 6px; }
+    .contact-card a, .contact-card span { color: var(--text); font-weight: 600; font-size: 1rem; word-break: break-word; }
+    .contact-card a:hover { color: var(--accent-light); }
+
+    /* ---------- Footer ---------- */
+    footer {
+      border-top: 1px solid var(--border);
+      background: var(--bg-soft);
+      padding: 48px 20px 28px;
+      margin-top: 40px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      text-align: center;
+    }
+
+    .footer-brand .logo { justify-content: center; margin-bottom: 10px; }
+    .footer-brand p { color: var(--text-muted); font-size: 0.9rem; max-width: 480px; margin: 0 auto; }
+
+    .footer-legal {
+      background: rgba(196, 139, 63, 0.06);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .footer-legal b { color: var(--text); }
+
+    .footer-bottom {
+      border-top: 1px dashed var(--border);
+      padding-top: 22px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .footer-bottom .gold { color: var(--accent); font-weight: 600; }
+
+    /* ---------- Animations ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 767px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: min(78vw, 320px);
+        background: rgba(18, 16, 14, 0.98);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        transform: translateX(100%);
+        transition: transform .35s ease;
+        box-shadow: -20px 0 60px rgba(0,0,0,0.5);
+        z-index: 100;
+      }
+
+      .nav-links.open { transform: translateX(0); }
+      .nav-links a { font-size: 1.15rem; }
+      .nav-links .btn-cta { margin-top: 8px; }
+      .burger { display: flex; }
+
+      body.no-scroll { overflow: hidden; }
+    }
+
+    @media (min-width: 640px) {
+      .activities-grid { grid-template-columns: repeat(2, 1fr); }
+      .brands-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 900px) {
+      .activities-grid { grid-template-columns: repeat(3, 1fr); }
+      .brands-grid { grid-template-columns: repeat(3, 1fr); }
+      .about-grid { grid-template-columns: 1.2fr 1fr; }
+      .contact-grid { grid-template-columns: repeat(3, 1fr); }
+      .footer-inner { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== En-tête ===== -->
+  <header>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#accueil" class="logo">
+        <span class="logo-mark">RH</span>
+        <span>R<span em>-Holding</span></span>
+      </a>
+
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#activites">Activités</a></li>
+        <li><a href="#marques">Marques</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="btn-cta">Nous contacter</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="accueil">
+      <span class="badge">🇲🇱 Bamako — République du Mali</span>
+      <h1 class="reveal">R-Holding — <span class="gold">Une vision multi-activités</span> au Mali</h1>
+      <p class="reveal reveal-delay-1">Rouski-Holding SARL regroupe des activités diversifiées : restauration rapide, développement web, cargo, commerce général, sécurité et plus encore. Une seule structure, plusieurs métiers.</p>
+      <div class="hero-actions reveal reveal-delay-2">
+        <a href="#contact" class="btn-cta">📞 Contactez-nous</a>
+        <a href="#activites" class="btn-outline">Découvrir nos activités</a>
+      </div>
+
+      <div class="hero-stats reveal reveal-delay-3">
+        <div class="stat"><b>7</b><small>Activités</small></div>
+        <div class="stat"><b>3</b><small>Marques du groupe</small></div>
+        <div class="stat"><b>1</b><small>Vision</small></div>
+      </div>
+    </section>
+
+    <!-- ===== À propos ===== -->
+    <section class="section" id="apropos">
+      <div class="section-head reveal">
+        <span class="kicker">À propos</span>
+        <h2>Qui sommes-nous ?</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p><strong>Rouski-Holding SARL</strong>, abrégée <strong>R-Holding</strong>, est une société holding multi-activités de droit malien fondée par <strong>Issouf Mahamadou Sidibe</strong>. Son siège social est fixé à <strong>Bamako (République du Mali)</strong>.</p>
+          <p>Notre vision : bâtir un groupe diversifié capable de répondre aux besoins essentiels du marché malien, à travers la restauration rapide, les technologies, la logistique et le commerce.</p>
+          <p>À travers nos marques — <strong>Solo</strong>, <strong>RMarket</strong> et <strong>RChicken</strong> — nous touchons des milliers d'utilisateurs et de consommateurs, et nous poursuivons notre développement avec des services de qualité.</p>
+        </div>
+
+        <div class="about-card reveal reveal-delay-1">
+          <h3>📋 Informations légales</h3>
+          <div class="legal-row"><span>Nom commercial</span><b>ROUSKI-HOLDING SARL</b></div>
+          <div class="legal-row"><span>Abréviation</span><b>R-HOLDING</b></div>
+          <div class="legal-row"><span>NINA</span><b>425900105010002T0002D</b></div>
+          <div class="legal-row"><span>RCCM</span><b>ML.BKO.01.2026.B.3759</b></div>
+          <div class="legal-row"><span>Siège social</span><b>Bamako, République du Mali</b></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Activités ===== -->
+    <section class="section" id="activites">
+      <div class="section-head reveal">
+        <span class="kicker">Nos activités</span>
+        <h2>Un groupe, plusieurs métiers</h2>
+        <p>R-Holding intervient dans sept secteurs complémentaires pour servir particuliers et professionnels.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="activities-grid">
+        <article class="card reveal">
+          <div class="icon">🍔</div>
+          <h3>Restauration rapide</h3>
+          <p>Fast food et services alimentaires, qualité et rapidité au service du goût.</p>
+        </article>
+
+        <article class="card reveal reveal-delay-1">
+          <div class="icon">💻</div>
+          <h3>Développement d'applications web</h3>
+          <p>Création de sites web et d'applications modernes, adaptées au marché local.</p>
+        </article>
+
+        <article class="card reveal reveal-delay-2">
+          <div class="icon">✈️</div>
+          <h3>Cargo — Transport aérien et maritime</h3>
+          <p>Transport et acheminement de marchandises par voie aérienne et maritime.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="icon">🛒</div>
+          <h3>Commerce général (import-export)</h3>
+          <p>Achat et vente de biens, importation et exportation entre le Mali et le reste du monde.</p>
+        </article>
+
+        <article class="card reveal reveal-delay-1">
+          <div class="icon">🛡️</div>
+          <h3>Agence de sécurité</h3>
+          <p>Services de surveillance et de sécurisation de biens et de personnes.</p>
+        </article>
+
+        <article class="card reveal reveal-delay-2">
+          <div class="icon">📦</div>
+          <h3>Offre de biens et services</h3>
+          <p>Un large éventail de biens et services pour répondre à tous vos besoins.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="icon">⛏️</div>
+          <h3>Ressources naturelles</h3>
+          <p>Achat, vente et exploitation des ressources naturelles dans le respect des lois en vigueur.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Marques ===== -->
+    <section class="section" id="marques">
+      <div class="section-head reveal">
+        <span class="kicker">Nos marques</span>
+        <h2>Les marques du groupe</h2>
+        <p>Des plateformes et services pensés pour le marché malien.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="brands-grid">
+        <article class="brand-card reveal">
+          <div class="brand-logo">Solo<span class="dot">.</span></div>
+          <span class="domain">solodesir.com</span>
+          <p>Plateforme de mise en relation sérieuse au Mali : mariage, relations et amitiés.</p>
+          <a href="https://solodesir.com" target="_blank" rel="noopener" class="brand-link">Visiter le site</a>
+        </article>
+
+        <article class="brand-card reveal reveal-delay-1">
+          <div class="brand-logo">RMarket<span class="dot">.</span></div>
+          <span class="domain">rmarket.ml</span>
+          <p>Plateforme de commerce en ligne : achetez et vendez en toute simplicité.</p>
+          <a href="https://rmarket.ml" target="_blank" rel="noopener" class="brand-link">Visiter le site</a>
+        </article>
+
+        <article class="brand-card reveal reveal-delay-2">
+          <div class="brand-logo">RChicken<span class="dot">.</span></div>
+          <span class="domain">R-Holding</span>
+          <p>Nos services de restauration rapide : du poulet savoureux, vite et bien servi.</p>
+          <a href="#contact" class="brand-link">Nous contacter</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="section" id="contact">
+      <div class="section-head reveal">
+        <span class="kicker">Contact</span>
+        <h2>Contactez-nous</h2>
+        <p>Notre équipe vous répond avec plaisir.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <div class="icon">📧</div>
+          <div>
+            <h3>Email</h3>
+            <a href="mailto:intersidibe2@gmail.com">intersidibe2@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-card reveal reveal-delay-1">
+          <div class="icon">📞</div>
+          <div>
+            <h3>Téléphone</h3>
+            <a href="tel:+22383806129">+223 83 80 61 29</a>
+          </div>
+        </div>
+
+        <div class="contact-card reveal reveal-delay-2">
+          <div class="icon">📍</div>
+          <div>
+            <h3>Siège social</h3>
+            <span>Quartier Bacodjocoroni Golf,<br>Rue 101, Porte 31 — Bamako, République du Mali</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#accueil" class="logo">
+          <span class="logo-mark">RH</span>
+          <span>R<span em>-Holding</span></span>
+        </a>
+        <p>Une vision multi-activités au Mali : restauration, technologies, cargo, commerce, sécurité et ressources naturelles.</p>
+      </div>
+
+      <div class="footer-legal">
+        <b>ROUSKI-HOLDING SARL</b> — NINA : <b>425900105010002T0002D</b> — RCCM : <b>ML.BKO.01.2026.B.3759</b><br>
+        Siège social : Quartier Bacodjocoroni Golf, Rue 101, Porte 31, Bamako — République du Mali
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> <span class="gold">R-Holding</span> — Rouski-Holding SARL. Tous droits réservés.</span>
+        <span>Site réalisé par R-Holding — Développement d'applications web 💻</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== Menu mobile =====
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+
+    burger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open);
+      burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      document.body.classList.toggle('no-scroll', open);
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('no-scroll');
+      });
+    });
+
+    // ===== Révélation au scroll =====
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ===== Année automatique =====
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
