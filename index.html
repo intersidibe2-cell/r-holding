@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>R-Holding — Une vision multi-activités au Mali | Rouski-Holding SARL</title>
+  <title>R-Holding — Un groupe, une vision, pour le Mali de demain</title>
 
   <!-- SEO -->
-  <meta name="description" content="Rouski-Holding SARL (R-Holding) — société holding multi-activités basée à Bamako, Mali. Restauration rapide, développement d'applications web, cargo, commerce général (import-export), biens et services, ressources naturelles.">
+  <meta name="description" content="R-Holding — Un groupe, une vision, pour le Mali de demain. Rouski-Holding SARL : restauration rapide, développement d'applications web, cargo, commerce général (import-export), biens et services, ressources naturelles. Basée à Bamako, Mali.">
   <meta name="keywords" content="R-Holding, Rouski-Holding, holding, Mali, Bamako, restauration rapide, applications web, cargo, import export, commerce général, RChicken, Solo, RMarket">
   <meta name="author" content="Rouski-Holding SARL">
   <meta name="robots" content="index, follow">
@@ -15,15 +15,15 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="R-Holding — Une vision multi-activités au Mali">
-  <meta property="og:description" content="Société holding multi-activités basée à Bamako, Mali. Développement web, restauration rapide, cargo, commerce général et plus encore.">
+  <meta property="og:title" content="R-Holding — Un groupe, une vision, pour le Mali de demain">
+  <meta property="og:description" content="R-Holding — Un groupe, une vision, pour le Mali de demain. Développement web, restauration rapide, cargo, commerce général et plus encore.">
   <meta property="og:site_name" content="R-Holding">
-  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale" content="fr_ML">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="R-Holding — Une vision multi-activités au Mali">
-  <meta name="twitter:description" content="Société holding multi-activités basée à Bamako, Mali.">
+  <meta name="twitter:title" content="R-Holding — Un groupe, une vision, pour le Mali de demain">
+  <meta name="twitter:description" content="R-Holding — Un groupe, une vision, pour le Mali de demain.">
 
   <!-- Favicon emoji -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏢</text></svg>">
@@ -42,7 +42,7 @@
     "alternateName": "R-Holding",
     "foundingDate": "2026",
     "founder": "Issouf Mahamadou Sidibe",
-    "email": "intersidibe2@gmail.com",
+    "email": "info@r-holding.ml",
     "telephone": "+22383806129",
     "address": {
       "@type": "PostalAddress",
@@ -214,6 +214,77 @@
     .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .burger.open span:nth-child(2) { opacity: 0; }
     .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ---------- Sélecteur de langue ---------- */
+    .lang-select {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .lang-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(30, 26, 21, 0.7);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 9px 14px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: border-color .2s ease, background .2s ease;
+    }
+
+    .lang-btn:hover { border-color: var(--accent); background: rgba(196, 139, 63, 0.08); }
+
+    .lang-btn .flag { font-size: 1rem; }
+    .lang-btn .arrow { font-size: 0.7rem; color: var(--accent); transition: transform .25s ease; }
+    .lang-select.open .lang-btn .arrow { transform: rotate(180deg); }
+
+    .lang-dropdown {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      min-width: 170px;
+      padding: 6px;
+      list-style: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: opacity .25s ease, transform .25s ease, visibility .25s;
+      z-index: 200;
+    }
+
+    .lang-select.open .lang-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+
+    .lang-dropdown button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 10px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      text-align: left;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .lang-dropdown button:hover { background: rgba(196, 139, 63, 0.1); color: var(--text); }
+    .lang-dropdown button.active { color: var(--accent); font-weight: 700; }
+    .lang-dropdown button .flag { font-size: 1.1rem; }
+    .lang-dropdown button .lang-name { flex: 1; }
 
     /* ---------- Hero ---------- */
     .hero {
@@ -566,6 +637,15 @@
 
     .footer-bottom .gold { color: var(--accent); font-weight: 600; }
 
+    .footer-gmail {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-decoration: underline dotted;
+      text-underline-offset: 3px;
+    }
+
+    .footer-gmail:hover { color: var(--accent-light); }
+
     /* ---------- Animations ---------- */
     .reveal {
       opacity: 0;
@@ -635,55 +715,69 @@
       </button>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#activites">Activités</a></li>
-        <li><a href="#marques">Marques</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#contact" class="btn-cta">Nous contacter</a></li>
+        <li><a href="#accueil" data-i18n="nav_home">Accueil</a></li>
+        <li><a href="#activites" data-i18n="nav_activities">Activités</a></li>
+        <li><a href="#marques" data-i18n="nav_brands">Marques</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        <li><a href="#contact" class="btn-cta" data-i18n="nav_cta">Nous contacter</a></li>
       </ul>
+
+      <div class="lang-select" id="langSelect">
+        <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Changer de langue">
+          <span class="flag">🇫🇷</span>
+          <span class="lang-current">Français</span>
+          <span class="arrow">▾</span>
+        </button>
+        <ul class="lang-dropdown" id="langDropdown" role="listbox" aria-label="Langues disponibles">
+          <li><button type="button" data-lang="fr" class="active"><span class="flag">🇫🇷</span><span class="lang-name">Français</span></button></li>
+          <li><button type="button" data-lang="en"><span class="flag">🇬🇧</span><span class="lang-name">English</span></button></li>
+          <li><button type="button" data-lang="ru"><span class="flag">🇷🇺</span><span class="lang-name">Русский</span></button></li>
+          <li><button type="button" data-lang="zh"><span class="flag">🇨🇳</span><span class="lang-name">中文</span></button></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
   <main>
     <!-- ===== Hero ===== -->
     <section class="hero" id="accueil">
-      <span class="badge">🇲🇱 Bamako — République du Mali</span>
-      <h1 class="reveal">R-Holding — Un groupe, une vision, pour <span class="gold">le Mali de demain</span></h1>
-      <p class="reveal reveal-delay-1">De la restauration au transport, du digital au commerce : R-Holding rassemble tous vos besoins sous une seule marque, au cœur de la République du Mali.</p>
+      <span class="badge" data-i18n="hero_badge">🇲🇱 Bamako — République du Mali</span>
+      <h1 class="reveal" data-i18n="hero_title">R-Holding — Un groupe, une vision, pour <span class="gold">le Mali de demain</span></h1>
+      <p class="reveal reveal-delay-1" data-i18n="hero_subtitle">De la restauration au transport, du digital au commerce : R-Holding rassemble tous vos besoins sous une seule marque, au cœur de la République du Mali.</p>
       <div class="hero-actions reveal reveal-delay-2">
-        <a href="#contact" class="btn-cta">📞 Contactez-nous</a>
-        <a href="#activites" class="btn-outline">Découvrir nos activités</a>
+        <a href="#contact" class="btn-cta" data-i18n="hero_cta">📞 Contactez-nous</a>
+        <a href="#activites" class="btn-outline" data-i18n="hero_outline">Découvrir nos activités</a>
       </div>
 
       <div class="hero-stats reveal reveal-delay-3">
-        <div class="stat"><b>6</b><small>Activités</small></div>
-        <div class="stat"><b>3</b><small>Marques du groupe</small></div>
-        <div class="stat"><b>1</b><small>Vision</small></div>
+        <div class="stat"><b>6</b><small data-i18n="stat_activities">Activités</small></div>
+        <div class="stat"><b>3</b><small data-i18n="stat_brands">Marques du groupe</small></div>
+        <div class="stat"><b>1</b><small data-i18n="stat_vision">Vision</small></div>
       </div>
     </section>
 
     <!-- ===== À propos ===== -->
     <section class="section" id="apropos">
       <div class="section-head reveal">
-        <span class="kicker">À propos</span>
-        <h2>Qui sommes-nous ?</h2>
+        <span class="kicker" data-i18n="about_kicker">À propos</span>
+        <h2 data-i18n="about_title">Qui sommes-nous ?</h2>
         <div class="divider"></div>
       </div>
 
       <div class="about-grid">
         <div class="about-text reveal">
-          <p><strong>Rouski-Holding SARL</strong>, abrégée <strong>R-Holding</strong>, est une société holding multi-activités de droit malien fondée par <strong>Issouf Mahamadou Sidibe</strong>. Son siège social est fixé à <strong>Bamako (République du Mali)</strong>.</p>
-          <p>Notre vision : bâtir un groupe diversifié capable de répondre aux besoins essentiels du marché malien, à travers la restauration rapide, les technologies, la logistique et le commerce.</p>
-          <p>À travers nos marques — <strong>Solo</strong>, <strong>RMarket</strong> et <strong>RChicken</strong> — nous touchons des milliers d'utilisateurs et de consommateurs, et nous poursuivons notre développement avec des services de qualité.</p>
+          <p data-i18n="about_p1"><strong>Rouski-Holding SARL</strong>, abrégée <strong>R-Holding</strong>, est une société holding multi-activités de droit malien fondée par <strong>Issouf Mahamadou Sidibe</strong>. Son siège social est fixé à <strong>Bamako (République du Mali)</strong>.</p>
+          <p data-i18n="about_p2">Notre vision : bâtir un groupe diversifié capable de répondre aux besoins essentiels du marché malien, à travers la restauration rapide, les technologies, la logistique et le commerce.</p>
+          <p data-i18n="about_p3">À travers nos marques — <strong>Solo</strong>, <strong>RMarket</strong> et <strong>RChicken</strong> — nous touchons des milliers d'utilisateurs et de consommateurs, et nous poursuivons notre développement avec des services de qualité.</p>
         </div>
 
         <div class="about-card reveal reveal-delay-1">
-          <h3>📋 Informations légales</h3>
-          <div class="legal-row"><span>Nom commercial</span><b>ROUSKI-HOLDING SARL</b></div>
-          <div class="legal-row"><span>Abréviation</span><b>R-HOLDING</b></div>
+          <h3 data-i18n="legal_title">📋 Informations légales</h3>
+          <div class="legal-row"><span data-i18n="legal_tradename">Nom commercial</span><b>ROUSKI-HOLDING SARL</b></div>
+          <div class="legal-row"><span data-i18n="legal_abbr">Abréviation</span><b>R-HOLDING</b></div>
           <div class="legal-row"><span>NINA</span><b>425900105010002T0002D</b></div>
           <div class="legal-row"><span>RCCM</span><b>ML.BKO.01.2026.B.3759</b></div>
-          <div class="legal-row"><span>Siège social</span><b>Bamako, République du Mali</b></div>
+          <div class="legal-row"><span data-i18n="legal_siege">Siège social</span><b>Bamako, République du Mali</b></div>
         </div>
       </div>
     </section>
@@ -691,47 +785,47 @@
     <!-- ===== Activités ===== -->
     <section class="section" id="activites">
       <div class="section-head reveal">
-        <span class="kicker">Nos activités</span>
-        <h2>Un groupe, plusieurs métiers</h2>
-        <p>R-Holding intervient dans six secteurs complémentaires pour servir particuliers et professionnels.</p>
+        <span class="kicker" data-i18n="act_kicker">Nos activités</span>
+        <h2 data-i18n="act_title">Un groupe, plusieurs métiers</h2>
+        <p data-i18n="act_intro">R-Holding intervient dans six secteurs complémentaires pour servir particuliers et professionnels.</p>
         <div class="divider"></div>
       </div>
 
       <div class="activities-grid">
         <article class="card reveal">
           <div class="icon">🍔</div>
-          <h3>Restauration rapide</h3>
-          <p>Fast food et services alimentaires, qualité et rapidité au service du goût.</p>
+          <h3 data-i18n="act1_title">Restauration rapide</h3>
+          <p data-i18n="act1_desc">Fast food et services alimentaires, qualité et rapidité au service du goût.</p>
         </article>
 
         <article class="card reveal reveal-delay-1">
           <div class="icon">💻</div>
-          <h3>Développement d'applications web</h3>
-          <p>Création de sites web et d'applications modernes, adaptées au marché local.</p>
+          <h3 data-i18n="act2_title">Développement d'applications web</h3>
+          <p data-i18n="act2_desc">Création de sites web et d'applications modernes, adaptées au marché local.</p>
         </article>
 
         <article class="card reveal reveal-delay-2">
           <div class="icon">✈️</div>
-          <h3>Cargo — Transport aérien et maritime</h3>
-          <p>Transport et acheminement de marchandises par voie aérienne et maritime.</p>
+          <h3 data-i18n="act3_title">Cargo — Transport aérien et maritime</h3>
+          <p data-i18n="act3_desc">Transport et acheminement de marchandises par voie aérienne et maritime.</p>
         </article>
 
         <article class="card reveal">
           <div class="icon">🛒</div>
-          <h3>Commerce général (import-export)</h3>
-          <p>Achat et vente de biens, importation et exportation entre le Mali et le reste du monde.</p>
+          <h3 data-i18n="act4_title">Commerce général (import-export)</h3>
+          <p data-i18n="act4_desc">Achat et vente de biens, importation et exportation entre le Mali et le reste du monde.</p>
         </article>
 
         <article class="card reveal reveal-delay-1">
           <div class="icon">📦</div>
-          <h3>Offre de biens et services</h3>
-          <p>Un large éventail de biens et services pour répondre à tous vos besoins.</p>
+          <h3 data-i18n="act5_title">Offre de biens et services</h3>
+          <p data-i18n="act5_desc">Un large éventail de biens et services pour répondre à tous vos besoins.</p>
         </article>
 
         <article class="card reveal">
           <div class="icon">⛏️</div>
-          <h3>Ressources naturelles</h3>
-          <p>Achat, vente et exploitation des ressources naturelles dans le respect des lois en vigueur.</p>
+          <h3 data-i18n="act6_title">Ressources naturelles</h3>
+          <p data-i18n="act6_desc">Achat, vente et exploitation des ressources naturelles dans le respect des lois en vigueur.</p>
         </article>
       </div>
     </section>
@@ -739,9 +833,9 @@
     <!-- ===== Marques ===== -->
     <section class="section" id="marques">
       <div class="section-head reveal">
-        <span class="kicker">Nos marques</span>
-        <h2>Les marques du groupe</h2>
-        <p>Des plateformes et services pensés pour le marché malien.</p>
+        <span class="kicker" data-i18n="brands_kicker">Nos marques</span>
+        <h2 data-i18n="brands_title">Les marques du groupe</h2>
+        <p data-i18n="brands_intro">Des plateformes et services pensés pour le marché malien.</p>
         <div class="divider"></div>
       </div>
 
@@ -749,22 +843,22 @@
         <article class="brand-card reveal">
           <div class="brand-logo">Solo<span class="dot">.</span></div>
           <span class="domain">solodesir.com</span>
-          <p>Plateforme de mise en relation sérieuse au Mali : mariage, relations et amitiés.</p>
-          <a href="https://solodesir.com" target="_blank" rel="noopener" class="brand-link">Visiter le site</a>
+          <p data-i18n="solo_desc">Plateforme de mise en relation sérieuse au Mali : mariage, relations et amitiés.</p>
+          <a href="https://solodesir.com" target="_blank" rel="noopener" class="brand-link" data-i18n="visit_btn">Visiter le site</a>
         </article>
 
         <article class="brand-card reveal reveal-delay-1">
           <div class="brand-logo">RMarket<span class="dot">.</span></div>
           <span class="domain">rmarket.ml</span>
-          <p>Plateforme de commerce en ligne : achetez et vendez en toute simplicité.</p>
-          <a href="https://rmarket.ml" target="_blank" rel="noopener" class="brand-link">Visiter le site</a>
+          <p data-i18n="rmarket_desc">Plateforme de commerce en ligne : achetez et vendez en toute simplicité.</p>
+          <a href="https://rmarket.ml" target="_blank" rel="noopener" class="brand-link" data-i18n="visit_btn">Visiter le site</a>
         </article>
 
         <article class="brand-card reveal reveal-delay-2">
           <div class="brand-logo">RChicken<span class="dot">.</span></div>
           <span class="domain">R-Holding</span>
-          <p>Nos services de restauration rapide : du poulet savoureux, vite et bien servi.</p>
-          <a href="#contact" class="brand-link">Nous contacter</a>
+          <p data-i18n="rchicken_desc">Nos services de restauration rapide : du poulet savoureux, vite et bien servi.</p>
+          <a href="#contact" class="brand-link" data-i18n="contact_btn">Nous contacter</a>
         </article>
       </div>
     </section>
@@ -772,9 +866,9 @@
     <!-- ===== Contact ===== -->
     <section class="section" id="contact">
       <div class="section-head reveal">
-        <span class="kicker">Contact</span>
-        <h2>Contactez-nous</h2>
-        <p>Notre équipe vous répond avec plaisir.</p>
+        <span class="kicker" data-i18n="contact_kicker">Contact</span>
+        <h2 data-i18n="contact_title">Contactez-nous</h2>
+        <p data-i18n="contact_intro">Notre équipe vous répond avec plaisir.</p>
         <div class="divider"></div>
       </div>
 
@@ -782,15 +876,15 @@
         <div class="contact-card reveal">
           <div class="icon">📧</div>
           <div>
-            <h3>Email</h3>
-            <a href="mailto:intersidibe2@gmail.com">intersidibe2@gmail.com</a>
+            <h3 data-i18n="ct_email">Email</h3>
+            <a href="mailto:info@r-holding.ml">info@r-holding.ml</a>
           </div>
         </div>
 
         <div class="contact-card reveal reveal-delay-1">
           <div class="icon">📞</div>
           <div>
-            <h3>Téléphone</h3>
+            <h3 data-i18n="ct_phone">Téléphone</h3>
             <a href="tel:+22383806129">+223 83 80 61 29</a>
           </div>
         </div>
@@ -798,8 +892,8 @@
         <div class="contact-card reveal reveal-delay-2">
           <div class="icon">📍</div>
           <div>
-            <h3>Siège social</h3>
-            <span>Quartier Bacodjocoroni Golf,<br>Rue 101, Porte 31 — Bamako, République du Mali</span>
+            <h3 data-i18n="ct_siege">Siège social</h3>
+            <span data-i18n="ct_address">Quartier Bacodjocoroni Golf,<br>Rue 101, Porte 31 — Bamako, République du Mali</span>
           </div>
         </div>
       </div>
@@ -814,22 +908,220 @@
           <span class="logo-mark">RH</span>
           <span>R<span em>-Holding</span></span>
         </a>
-        <p>Une vision multi-activités au Mali : restauration, technologies, cargo, commerce et ressources naturelles.</p>
+        <p data-i18n="footer_desc">Une vision multi-activités au Mali : restauration, technologies, cargo, commerce et ressources naturelles.</p>
       </div>
 
       <div class="footer-legal">
         <b>ROUSKI-HOLDING SARL</b> — NINA : <b>425900105010002T0002D</b> — RCCM : <b>ML.BKO.01.2026.B.3759</b><br>
-        Siège social : Quartier Bacodjocoroni Golf, Rue 101, Porte 31, Bamako — République du Mali
+        <span data-i18n="footer_legal_siege">Siège social : Quartier Bacodjocoroni Golf, Rue 101, Porte 31, Bamako — République du Mali</span>
       </div>
 
       <div class="footer-bottom">
-        <span>© <span id="year">2026</span> <span class="gold">R-Holding</span> — Rouski-Holding SARL. Tous droits réservés.</span>
-        <span>Site réalisé par R-Holding — Développement d'applications web 💻</span>
+        <span>© <span id="year">2026</span> <span class="gold">R-Holding</span> — <span data-i18n="footer_rights">Tous droits réservés.</span></span>
+        <span data-i18n="footer_credit">Site réalisé par R-Holding — Développement d'applications web 💻</span>
+        <a href="mailto:intersidibe2@gmail.com" class="footer-gmail">📧 intersidibe2@gmail.com</a>
       </div>
     </div>
   </footer>
 
   <script>
+    // ===== Traductions =====
+    const translations = {
+      fr: {
+        nav_home: "Accueil", nav_activities: "Activités", nav_brands: "Marques", nav_contact: "Contact", nav_cta: "Nous contacter",
+        hero_badge: "🇲🇱 Bamako — République du Mali",
+        hero_title: "R-Holding — Un groupe, une vision, pour <span class=\"gold\">le Mali de demain</span>",
+        hero_subtitle: "De la restauration au transport, du digital au commerce : R-Holding rassemble tous vos besoins sous une seule marque, au cœur de la République du Mali.",
+        hero_cta: "📞 Contactez-nous", hero_outline: "Découvrir nos activités",
+        stat_activities: "Activités", stat_brands: "Marques du groupe", stat_vision: "Vision",
+        about_kicker: "À propos", about_title: "Qui sommes-nous ?",
+        about_p1: "<strong>Rouski-Holding SARL</strong>, abrégée <strong>R-Holding</strong>, est une société holding multi-activités de droit malien fondée par <strong>Issouf Mahamadou Sidibe</strong>. Son siège social est fixé à <strong>Bamako (République du Mali)</strong>.",
+        about_p2: "Notre vision : bâtir un groupe diversifié capable de répondre aux besoins essentiels du marché malien, à travers la restauration rapide, les technologies, la logistique et le commerce.",
+        about_p3: "À travers nos marques — <strong>Solo</strong>, <strong>RMarket</strong> et <strong>RChicken</strong> — nous touchons des milliers d'utilisateurs et de consommateurs, et nous poursuivons notre développement avec des services de qualité.",
+        legal_title: "📋 Informations légales", legal_tradename: "Nom commercial", legal_abbr: "Abréviation", legal_siege: "Siège social",
+        act_kicker: "Nos activités", act_title: "Un groupe, plusieurs métiers",
+        act_intro: "R-Holding intervient dans six secteurs complémentaires pour servir particuliers et professionnels.",
+        act1_title: "Restauration rapide", act1_desc: "Fast food et services alimentaires, qualité et rapidité au service du goût.",
+        act2_title: "Développement d'applications web", act2_desc: "Création de sites web et d'applications modernes, adaptées au marché local.",
+        act3_title: "Cargo — Transport aérien et maritime", act3_desc: "Transport et acheminement de marchandises par voie aérienne et maritime.",
+        act4_title: "Commerce général (import-export)", act4_desc: "Achat et vente de biens, importation et exportation entre le Mali et le reste du monde.",
+        act5_title: "Offre de biens et services", act5_desc: "Un large éventail de biens et services pour répondre à tous vos besoins.",
+        act6_title: "Ressources naturelles", act6_desc: "Achat, vente et exploitation des ressources naturelles dans le respect des lois en vigueur.",
+        brands_kicker: "Nos marques", brands_title: "Les marques du groupe",
+        brands_intro: "Des plateformes et services pensés pour le marché malien.",
+        solo_desc: "Plateforme de mise en relation sérieuse au Mali : mariage, relations et amitiés.",
+        rmarket_desc: "Plateforme de commerce en ligne : achetez et vendez en toute simplicité.",
+        rchicken_desc: "Nos services de restauration rapide : du poulet savoureux, vite et bien servi.",
+        visit_btn: "Visiter le site", contact_btn: "Nous contacter",
+        contact_kicker: "Contact", contact_title: "Contactez-nous", contact_intro: "Notre équipe vous répond avec plaisir.",
+        ct_email: "Email", ct_phone: "Téléphone", ct_siege: "Siège social",
+        ct_address: "Quartier Bacodjocoroni Golf,<br>Rue 101, Porte 31 — Bamako, République du Mali",
+        footer_desc: "Une vision multi-activités au Mali : restauration, technologies, cargo, commerce et ressources naturelles.",
+        footer_legal_siege: "Siège social : Quartier Bacodjocoroni Golf, Rue 101, Porte 31, Bamako — République du Mali",
+        footer_rights: "Tous droits réservés.",
+        footer_credit: "Site réalisé par R-Holding — Développement d'applications web 💻"
+      },
+      en: {
+        nav_home: "Home", nav_activities: "Activities", nav_brands: "Brands", nav_contact: "Contact", nav_cta: "Contact us",
+        hero_badge: "🇲🇱 Bamako — Republic of Mali",
+        hero_title: "R-Holding — One group, one vision, for <span class=\"gold\">the Mali of tomorrow</span>",
+        hero_subtitle: "From fast food to transport, from digital to trade: R-Holding brings all your needs under a single brand, in the heart of the Republic of Mali.",
+        hero_cta: "📞 Contact us", hero_outline: "Discover our activities",
+        stat_activities: "Activities", stat_brands: "Group brands", stat_vision: "Vision",
+        about_kicker: "About us", about_title: "Who are we?",
+        about_p1: "<strong>Rouski-Holding SARL</strong>, abbreviated <strong>R-Holding</strong>, is a Malian multi-business holding company founded by <strong>Issouf Mahamadou Sidibe</strong>. Its head office is located in <strong>Bamako (Republic of Mali)</strong>.",
+        about_p2: "Our vision: to build a diversified group able to meet the essential needs of the Malian market, through fast food, technology, logistics and trade.",
+        about_p3: "Through our brands — <strong>Solo</strong>, <strong>RMarket</strong> and <strong>RChicken</strong> — we reach thousands of users and consumers, and we keep growing with quality services.",
+        legal_title: "📋 Legal information", legal_tradename: "Trade name", legal_abbr: "Abbreviation", legal_siege: "Head office",
+        act_kicker: "Our activities", act_title: "One group, many trades",
+        act_intro: "R-Holding operates in six complementary sectors to serve individuals and professionals.",
+        act1_title: "Fast food", act1_desc: "Fast food and catering services, quality and speed in the service of taste.",
+        act2_title: "Web application development", act2_desc: "Creating modern websites and applications adapted to the local market.",
+        act3_title: "Cargo — Air and sea freight", act3_desc: "Transport and delivery of goods by air and sea.",
+        act4_title: "General trade (import-export)", act4_desc: "Buying and selling goods, importing and exporting between Mali and the rest of the world.",
+        act5_title: "Goods and services offering", act5_desc: "A wide range of goods and services to meet all your needs.",
+        act6_title: "Natural resources", act6_desc: "Buying, selling and exploiting natural resources in accordance with the law.",
+        brands_kicker: "Our brands", brands_title: "The group brands",
+        brands_intro: "Platforms and services designed for the Malian market.",
+        solo_desc: "A serious matchmaking platform in Mali: marriage, relationships and friendships.",
+        rmarket_desc: "Online commerce platform: buy and sell with ease.",
+        rchicken_desc: "Our fast food services: tasty chicken, quick and well served.",
+        visit_btn: "Visit website", contact_btn: "Contact us",
+        contact_kicker: "Contact", contact_title: "Contact us", contact_intro: "Our team will be happy to answer you.",
+        ct_email: "Email", ct_phone: "Phone", ct_siege: "Head office",
+        ct_address: "Bacodjocoroni Golf District,<br>Street 101, Door 31 — Bamako, Republic of Mali",
+        footer_desc: "A multi-activity vision in Mali: food, technology, cargo, trade and natural resources.",
+        footer_legal_siege: "Head office: Bacodjocoroni Golf District, Street 101, Door 31, Bamako — Republic of Mali",
+        footer_rights: "All rights reserved.",
+        footer_credit: "Website built by R-Holding — Web application development 💻"
+      },
+      ru: {
+        nav_home: "Главная", nav_activities: "Деятельность", nav_brands: "Бренды", nav_contact: "Контакты", nav_cta: "Связаться с нами",
+        hero_badge: "🇲🇱 Бамако — Республика Мали",
+        hero_title: "R-Holding — Одна группа, одна цель, для <span class=\"gold\">Мали будущего</span>",
+        hero_subtitle: "От ресторанного бизнеса до транспорта, от цифровых технологий до торговли: R-Holding объединяет все ваши потребности под одной маркой, в самом сердце Республики Мали.",
+        hero_cta: "📞 Связаться с нами", hero_outline: "Наша деятельность",
+        stat_activities: "Направлений", stat_brands: "Брендов группы", stat_vision: "Видение",
+        about_kicker: "О нас", about_title: "Кто мы?",
+        about_p1: "<strong>Rouski-Holding SARL</strong>, сокращённо <strong>R-Holding</strong>, — малийский многопрофильный холдинг, основанный <strong>Иссуфом Махамаду Сидибе</strong>. Главный офис находится в <strong>Бамако (Республика Мали)</strong>.",
+        about_p2: "Наша цель: построить диверсифицированную группу, способную удовлетворить основные потребности малийского рынка в области общественного питания, технологий, логистики и торговли.",
+        about_p3: "Через наши бренды — <strong>Solo</strong>, <strong>RMarket</strong> и <strong>RChicken</strong> — мы охватываем тысячи пользователей и потребителей и продолжаем развиваться, предлагая качественные услуги.",
+        legal_title: "📋 Юридическая информация", legal_tradename: "Коммерческое название", legal_abbr: "Сокращение", legal_siege: "Головной офис",
+        act_kicker: "Наша деятельность", act_title: "Одна группа — много сфер",
+        act_intro: "R-Holding работает в шести взаимодополняющих секторах, обслуживая частных лиц и профессионалов.",
+        act1_title: "Фастфуд", act1_desc: "Быстрое питание и услуги общественного питания, качество и скорость в угоду вкусу.",
+        act2_title: "Разработка веб-приложений", act2_desc: "Создание современных сайтов и приложений, адаптированных к местному рынку.",
+        act3_title: "Грузоперевозки — авиа и морские", act3_desc: "Перевозка и доставка грузов воздушным и морским транспортом.",
+        act4_title: "Общая торговля (импорт-экспорт)", act4_desc: "Покупка и продажа товаров, импорт и экспорт между Мали и остальным миром.",
+        act5_title: "Товары и услуги", act5_desc: "Широкий ассортимент товаров и услуг для всех ваших потребностей.",
+        act6_title: "Природные ресурсы", act6_desc: "Покупка, продажа и освоение природных ресурсов в соответствии с законом.",
+        brands_kicker: "Наши бренды", brands_title: "Бренды группы",
+        brands_intro: "Платформы и услуги, созданные для малийского рынка.",
+        solo_desc: "Серьёзная платформа знакомств в Мали: брак, отношения и дружба.",
+        rmarket_desc: "Онлайн-платформа торговли: покупайте и продавайте легко.",
+        rchicken_desc: "Наши услуги быстрого питания: вкусная курица, быстро и качественно.",
+        visit_btn: "Посетить сайт", contact_btn: "Связаться с нами",
+        contact_kicker: "Контакты", contact_title: "Свяжитесь с нами", contact_intro: "Наша команда с радостью вам ответит.",
+        ct_email: "Эл. почта", ct_phone: "Телефон", ct_siege: "Головной офис",
+        ct_address: "Район Бакоджокорони Гольф,<br>Улица 101, Дверь 31 — Бамако, Республика Мали",
+        footer_desc: "Многопрофильная деятельность в Мали: питание, технологии, грузоперевозки, торговля и природные ресурсы.",
+        footer_legal_siege: "Головной офис: район Бакоджокорони Гольф, улица 101, дверь 31, Бамако — Республика Мали",
+        footer_rights: "Все права защищены.",
+        footer_credit: "Сайт создан R-Holding — разработка веб-приложений 💻"
+      },
+      zh: {
+        nav_home: "首页", nav_activities: "业务", nav_brands: "品牌", nav_contact: "联系我们", nav_cta: "联系我们",
+        hero_badge: "🇲🇱 巴马科 — 马里共和国",
+        hero_title: "R-Holding — 一个集团，一个愿景，为了<span class=\"gold\">明天的马里</span>",
+        hero_subtitle: "从快餐到运输，从数字科技到贸易：R-Holding 将您的所有需求汇聚于一个品牌之下，位于马里共和国中心。",
+        hero_cta: "📞 联系我们", hero_outline: "了解我们的业务",
+        stat_activities: "项业务", stat_brands: "集团品牌", stat_vision: "愿景",
+        about_kicker: "关于我们", about_title: "我们是谁？",
+        about_p1: "<strong>Rouski-Holding SARL</strong>，简称 <strong>R-Holding</strong>，是一家马里的多元化控股公司，由 <strong>Issouf Mahamadou Sidibe</strong> 创立。总部位于 <strong>巴马科（马里共和国）</strong>。",
+        about_p2: "我们的愿景：打造一个多元化的集团，满足马里市场的基本需求，业务涵盖快餐、科技、物流和贸易。",
+        about_p3: "通过我们的品牌 — <strong>Solo</strong>、<strong>RMarket</strong> 和 <strong>RChicken</strong> — 我们服务成千上万的用户和消费者，并以优质的服务持续发展。",
+        legal_title: "📋 法律信息", legal_tradename: "商号", legal_abbr: "简称", legal_siege: "总部",
+        act_kicker: "我们的业务", act_title: "一个集团，多种行业",
+        act_intro: "R-Holding 经营六个互补领域，服务个人和专业人士。",
+        act1_title: "快餐", act1_desc: "快餐和餐饮服务，品质与速度兼优。",
+        act2_title: "Web 应用开发", act2_desc: "创建适应本地市场的现代化网站和应用。",
+        act3_title: "货运 — 航空与海运", act3_desc: "通过航空和海运运输货物。",
+        act4_title: "综合贸易（进出口）", act4_desc: "在马里与世界之间买卖货物、进出口贸易。",
+        act5_title: "商品与服务", act5_desc: "提供广泛商品和服务，满足您的所有需求。",
+        act6_title: "自然资源", act6_desc: "依法购买、销售和开发自然资源。",
+        brands_kicker: "我们的品牌", brands_title: "集团品牌",
+        brands_intro: "专为马里市场打造的平台与服务。",
+        solo_desc: "马里的严肃交友平台：婚姻、恋爱和友谊。",
+        rmarket_desc: "在线商务平台：轻松买卖。",
+        rchicken_desc: "我们的快餐服务：美味鸡肉，快捷周到。",
+        visit_btn: "访问网站", contact_btn: "联系我们",
+        contact_kicker: "联系方式", contact_title: "联系我们", contact_intro: "我们的团队将乐于为您解答。",
+        ct_email: "电子邮箱", ct_phone: "电话", ct_siege: "总部",
+        ct_address: "Bacodjocoroni Golf 区，<br>101 街，31 号 — 巴马科，马里共和国",
+        footer_desc: "在马里的多元化业务：餐饮、科技、货运、贸易和自然资源。",
+        footer_legal_siege: "总部：Bacodjocoroni Golf 区，101 街，31 号，巴马科 — 马里共和国",
+        footer_rights: "版权所有。",
+        footer_credit: "网站由 R-Holding 制作 — Web 应用开发 💻"
+      }
+    };
+
+    const langLabels = { fr: "Français", en: "English", ru: "Русский", zh: "中文" };
+    const langFlags = { fr: "🇫🇷", en: "🇬🇧", ru: "🇷🇺", zh: "🇨🇳" };
+
+    // ===== Bascule de langue =====
+    const langSelect = document.getElementById('langSelect');
+    const langBtn = document.getElementById('langBtn');
+    const langDropdown = document.getElementById('langDropdown');
+    const langCurrent = langBtn.querySelector('.lang-current');
+    const langFlag = langBtn.querySelector('.flag');
+
+    function getSavedLang() {
+      const saved = localStorage.getItem('rholding-lang');
+      return translations[saved] ? saved : 'fr';
+    }
+
+    function applyLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key] !== undefined) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      langFlag.textContent = langFlags[lang];
+      langCurrent.textContent = langLabels[lang];
+      document.querySelectorAll('#langDropdown [data-lang]').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+      document.title = "R-Holding — " + (lang === 'fr'
+        ? "Un groupe, une vision, pour le Mali de demain"
+        : lang === 'en' ? "One group, one vision, for the Mali of tomorrow"
+        : lang === 'ru' ? "Одна группа, одна цель, для Мали будущего"
+        : "一个集团，一个愿景，为了明天的马里");
+      localStorage.setItem('rholding-lang', lang);
+    }
+
+    langBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = langSelect.classList.toggle('open');
+      langBtn.setAttribute('aria-expanded', open);
+    });
+
+    langDropdown.querySelectorAll('[data-lang]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        applyLang(btn.getAttribute('data-lang'));
+        langSelect.classList.remove('open');
+        langBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!langSelect.contains(e.target)) {
+        langSelect.classList.remove('open');
+        langBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
     // ===== Menu mobile =====
     const burger = document.getElementById('burger');
     const navLinks = document.getElementById('navLinks');
@@ -865,6 +1157,9 @@
 
     // ===== Année automatique =====
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== Initialisation de la langue =====
+    applyLang(getSavedLang());
   </script>
 </body>
 </html>
