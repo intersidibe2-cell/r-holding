@@ -1554,7 +1554,7 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // ===== Formulaire de contact =====
-    const FORM_ENDPOINT = "https://formspree.io/f/REMPLACEZ_PAR_VOTRE_ID"; // ← remplace par ton endpoint Formspree
+    const FORM_ENDPOINT = "https://formspree.io/f/xgawovqg";
     const contactForm = document.getElementById('contactForm');
     const formSuccess = document.getElementById('formSuccess');
     const formError = document.getElementById('formError');
@@ -1567,6 +1567,10 @@
 
         const data = new FormData(contactForm);
         data.append('_subject', 'Message depuis le site R-Holding');
+        const emailField = document.getElementById('cf-email');
+        if (emailField && emailField.value) {
+          data.append('_replyto', emailField.value);
+        }
 
         try {
           const resp = await fetch(FORM_ENDPOINT, {
