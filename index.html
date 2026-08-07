@@ -563,6 +563,166 @@
     .brand-link::after { content: "→"; transition: transform .2s ease; }
     .brand-link:hover::after { transform: translateX(4px); }
 
+    /* ---------- Services ---------- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--accent-grad);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .35s ease;
+    }
+
+    .service-card:hover { transform: translateY(-6px); border-color: rgba(196, 139, 63, 0.45); box-shadow: var(--shadow); }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-card .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 1.7rem;
+      background: rgba(196, 139, 63, 0.1);
+      border: 1px solid var(--border);
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 { font-size: 1.1rem; margin-bottom: 8px; font-weight: 700; }
+    .service-card p { color: var(--text-muted); font-size: 0.94rem; }
+
+    .services-cta {
+      margin-top: 36px;
+      text-align: center;
+    }
+
+    /* ---------- Partenaires ---------- */
+    .partners-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .partner-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px 24px;
+      text-align: center;
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+
+    .partner-card:hover { transform: translateY(-6px); border-color: rgba(196, 139, 63, 0.45); box-shadow: var(--shadow); }
+
+    .partner-logo {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .partner-card p { color: var(--text-muted); font-size: 0.9rem; }
+
+    /* ---------- Formulaire ---------- */
+    .contact-form-wrap {
+      margin-top: 40px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-form {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px 26px;
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 18px;
+    }
+
+    .form-row { display: grid; gap: 18px; }
+
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(18, 16, 14, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      padding: 12px 14px;
+      transition: border-color .2s ease;
+      width: 100%;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .form-group select option { background: var(--bg-soft); color: var(--text); }
+
+    .form-group textarea { min-height: 120px; resize: vertical; }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      background: rgba(196, 139, 63, 0.08);
+      border: 1px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 18px;
+      color: var(--accent-light);
+      font-weight: 600;
+    }
+
+    .form-success.show { display: block; }
+
+    .form-error {
+      display: none;
+      text-align: center;
+      background: rgba(255, 80, 80, 0.08);
+      border: 1px solid rgba(255, 80, 80, 0.4);
+      border-radius: var(--radius);
+      padding: 18px;
+      color: #ff8080;
+      font-weight: 600;
+    }
+
+    .form-error.show { display: block; }
+
     /* ---------- Contact ---------- */
     .contact-grid {
       display: grid;
@@ -696,11 +856,16 @@
     @media (min-width: 640px) {
       .activities-grid { grid-template-columns: repeat(2, 1fr); }
       .brands-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .partners-grid { grid-template-columns: repeat(2, 1fr); }
+      .form-row { grid-template-columns: 1fr 1fr; }
     }
 
     @media (min-width: 900px) {
       .activities-grid { grid-template-columns: repeat(3, 1fr); }
       .brands-grid { grid-template-columns: repeat(3, 1fr); }
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
+      .partners-grid { grid-template-columns: repeat(4, 1fr); }
       .about-grid { grid-template-columns: 1.2fr 1fr; }
       .contact-grid { grid-template-columns: repeat(3, 1fr); }
       .footer-inner { flex-direction: column; }
@@ -724,7 +889,9 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#accueil" data-i18n="nav_home">Accueil</a></li>
         <li><a href="#activites" data-i18n="nav_activities">Activités</a></li>
+        <li><a href="#services" data-i18n="nav_services">Services</a></li>
         <li><a href="#marques" data-i18n="nav_brands">Marques</a></li>
+        <li><a href="#partenaires" data-i18n="nav_partners">Partenaires</a></li>
         <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
         <li><a href="#contact" class="btn-cta" data-i18n="nav_cta">Nous contacter</a></li>
       </ul>
@@ -837,6 +1004,58 @@
       </div>
     </section>
 
+    <!-- ===== Services ===== -->
+    <section class="section" id="services">
+      <div class="section-head reveal">
+        <span class="kicker" data-i18n="services_kicker">Nos services</span>
+        <h2 data-i18n="services_title">Des solutions numériques sur mesure</h2>
+        <p data-i18n="services_intro">R-Holding développe des sites internet, des logiciels et des applications pour les particuliers et les entreprises.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <div class="icon">🌐</div>
+          <h3 data-i18n="srv1_title">Création de sites internet</h3>
+          <p data-i18n="srv1_desc">Sites vitrines, e-commerce et plateformes modernes, adaptés au marché local.</p>
+        </article>
+
+        <article class="service-card reveal reveal-delay-1">
+          <div class="icon">💻</div>
+          <h3 data-i18n="srv2_title">Développement de logiciels</h3>
+          <p data-i18n="srv2_desc">Logiciels de gestion, outils métiers et solutions sur mesure pour votre activité.</p>
+        </article>
+
+        <article class="service-card reveal reveal-delay-2">
+          <div class="icon">📱</div>
+          <h3 data-i18n="srv3_title">Applications mobiles & web</h3>
+          <p data-i18n="srv3_desc">Applications intuitives pour iOS, Android et le web, pensées pour vos utilisateurs.</p>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="icon">🚀</div>
+          <h3 data-i18n="srv4_title">Hébergement & maintenance</h3>
+          <p data-i18n="srv4_desc">Mise en ligne, mise à jour et suivi de vos solutions en toute sérénité.</p>
+        </article>
+
+        <article class="service-card reveal reveal-delay-1">
+          <div class="icon">📈</div>
+          <h3 data-i18n="srv5_title">Référencement (SEO)</h3>
+          <p data-i18n="srv5_desc">Optimisez votre visibilité sur les moteurs de recherche et attirez plus de clients.</p>
+        </article>
+
+        <article class="service-card reveal reveal-delay-2">
+          <div class="icon">🛠️</div>
+          <h3 data-i18n="srv6_title">Prestations sur mesure</h3>
+          <p data-i18n="srv6_desc">Formulaires, intégrations et projets spécifiques pour répondre à vos besoins.</p>
+        </article>
+      </div>
+
+      <div class="services-cta reveal">
+        <a href="#contact" class="btn-cta" data-i18n="services_cta">📩 Demander un devis</a>
+      </div>
+    </section>
+
     <!-- ===== Marques ===== -->
     <section class="section" id="marques">
       <div class="section-head reveal">
@@ -866,6 +1085,38 @@
           <span class="domain">rchicken.ml</span>
           <p data-i18n="rchicken_desc">Nos services de restauration rapide : du poulet savoureux, vite et bien servi.</p>
           <a href="https://rchicken.ml" target="_blank" rel="noopener" class="brand-link" data-i18n="visit_btn">Visiter le site</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Partenaires ===== -->
+    <section class="section" id="partenaires">
+      <div class="section-head reveal">
+        <span class="kicker" data-i18n="partners_kicker">Nos partenaires</span>
+        <h2 data-i18n="partners_title">Ils nous accompagnent</h2>
+        <p data-i18n="partners_intro">R-Holding travaille aux côtés d'acteurs de confiance au Mali.</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="partners-grid">
+        <article class="partner-card reveal">
+          <div class="partner-logo">Orange Mali</div>
+          <p data-i18n="p1_desc">Opérateur de télécommunications : mobile, internet et paiement mobile au Mali.</p>
+        </article>
+
+        <article class="partner-card reveal reveal-delay-1">
+          <div class="partner-logo">AGETIC</div>
+          <p data-i18n="p2_desc">Agence de gestion de l'informatique et de la communication de l'État du Mali.</p>
+        </article>
+
+        <article class="partner-card reveal reveal-delay-2">
+          <div class="partner-logo">APDP</div>
+          <p data-i18n="p3_desc">Autorité de protection des données personnelles, garante de la vie privée numérique.</p>
+        </article>
+
+        <article class="partner-card reveal reveal-delay-3">
+          <div class="partner-logo">Afribone</div>
+          <p data-i18n="p4_desc">Fournisseur d'accès internet et solutions de connectivité au Mali.</p>
         </article>
       </div>
     </section>
@@ -904,6 +1155,45 @@
           </div>
         </div>
       </div>
+
+      <div class="contact-form-wrap reveal">
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-name" data-i18n="f_name">Nom complet</label>
+                <input type="text" id="cf-name" name="name" required data-i18n-placeholder="f_name_ph">
+              </div>
+              <div class="form-group">
+                <label for="cf-email" data-i18n="f_email">Email</label>
+                <input type="email" id="cf-email" name="email" required data-i18n-placeholder="f_email_ph">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-phone" data-i18n="f_phone">Téléphone</label>
+                <input type="tel" id="cf-phone" name="phone" data-i18n-placeholder="f_phone_ph">
+              </div>
+              <div class="form-group">
+                <label for="cf-subject" data-i18n="f_subject">Sujet</label>
+                <select id="cf-subject" name="subject" required>
+                  <option value="website" data-i18n="f_opt_website">Site web</option>
+                  <option value="software" data-i18n="f_opt_software">Logiciel</option>
+                  <option value="app" data-i18n="f_opt_app">Application</option>
+                  <option value="other" data-i18n="f_opt_other">Autre</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cf-message" data-i18n="f_message">Message</label>
+              <textarea id="cf-message" name="message" required data-i18n-placeholder="f_message_ph"></textarea>
+            </div>
+            <button type="submit" class="btn-cta" data-i18n="f_submit">📨 Envoyer le message</button>
+          </form>
+          <div class="form-success" id="formSuccess" data-i18n="f_success">Merci ! Votre message a bien été envoyé. Nous vous répondrons rapidement.</div>
+          <div class="form-error" id="formError" data-i18n="f_error">Une erreur est survenue. Veuillez réessayer ou nous écrire directement à info@r-holding.ml.</div>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -935,7 +1225,7 @@
     // ===== Traductions =====
     const translations = {
       fr: {
-        nav_home: "Accueil", nav_activities: "Activités", nav_brands: "Marques", nav_contact: "Contact", nav_cta: "Nous contacter",
+        nav_home: "Accueil", nav_activities: "Activités", nav_services: "Services", nav_brands: "Marques", nav_partners: "Partenaires", nav_contact: "Contact", nav_cta: "Nous contacter",
         hero_badge: "🇲🇱 Bamako — République du Mali",
         hero_title: "R-Holding — Un groupe, une vision, pour <span class=\"gold\">le Mali de demain</span>",
         hero_subtitle: "De la restauration au transport, du digital au commerce : R-Holding rassemble tous vos besoins sous une seule marque, au cœur de la République du Mali.",
@@ -963,13 +1253,36 @@
         contact_kicker: "Contact", contact_title: "Contactez-nous", contact_intro: "Notre équipe vous répond avec plaisir.",
         ct_email: "Email", ct_phone: "Téléphone", ct_siege: "Siège social",
         ct_address: "Quartier Bacodjocoroni Golf,<br>Rue 101, Porte 31 — Bamako, République du Mali",
+        services_kicker: "Nos services", services_title: "Des solutions numériques sur mesure",
+        services_intro: "R-Holding développe des sites internet, des logiciels et des applications pour les particuliers et les entreprises.",
+        srv1_title: "Création de sites internet", srv1_desc: "Sites vitrines, e-commerce et plateformes modernes, adaptés au marché local.",
+        srv2_title: "Développement de logiciels", srv2_desc: "Logiciels de gestion, outils métiers et solutions sur mesure pour votre activité.",
+        srv3_title: "Applications mobiles & web", srv3_desc: "Applications intuitives pour iOS, Android et le web, pensées pour vos utilisateurs.",
+        srv4_title: "Hébergement & maintenance", srv4_desc: "Mise en ligne, mise à jour et suivi de vos solutions en toute sérénité.",
+        srv5_title: "Référencement (SEO)", srv5_desc: "Optimisez votre visibilité sur les moteurs de recherche et attirez plus de clients.",
+        srv6_title: "Prestations sur mesure", srv6_desc: "Formulaires, intégrations et projets spécifiques pour répondre à vos besoins.",
+        services_cta: "📩 Demander un devis",
+        partners_kicker: "Nos partenaires", partners_title: "Ils nous accompagnent",
+        partners_intro: "R-Holding travaille aux côtés d'acteurs de confiance au Mali.",
+        p1_desc: "Opérateur de télécommunications : mobile, internet et paiement mobile au Mali.",
+        p2_desc: "Agence de gestion de l'informatique et de la communication de l'État du Mali.",
+        p3_desc: "Autorité de protection des données personnelles, garante de la vie privée numérique.",
+        p4_desc: "Fournisseur d'accès internet et solutions de connectivité au Mali.",
+        f_name: "Nom complet", f_name_ph: "Votre nom",
+        f_email: "Email", f_email_ph: "votre@email.com",
+        f_phone: "Téléphone", f_phone_ph: "+223 ...",
+        f_subject: "Sujet", f_opt_website: "Site web", f_opt_software: "Logiciel", f_opt_app: "Application", f_opt_other: "Autre",
+        f_message: "Message", f_message_ph: "Décrivez votre projet...",
+        f_submit: "📨 Envoyer le message",
+        f_success: "Merci ! Votre message a bien été envoyé. Nous vous répondrons rapidement.",
+        f_error: "Une erreur est survenue. Veuillez réessayer ou nous écrire directement à info@r-holding.ml.",
         footer_desc: "Une vision multi-activités au Mali : restauration, technologies, cargo, commerce et ressources naturelles.",
         footer_legal_siege: "Siège social : Quartier Bacodjocoroni Golf, Rue 101, Porte 31, Bamako — République du Mali",
         footer_rights: "Tous droits réservés.",
         footer_credit: "Site réalisé par R-Holding — Développement d'applications web 💻"
       },
       en: {
-        nav_home: "Home", nav_activities: "Activities", nav_brands: "Brands", nav_contact: "Contact", nav_cta: "Contact us",
+        nav_home: "Home", nav_activities: "Activities", nav_services: "Services", nav_brands: "Brands", nav_partners: "Partners", nav_contact: "Contact", nav_cta: "Contact us",
         hero_badge: "🇲🇱 Bamako — Republic of Mali",
         hero_title: "R-Holding — One group, one vision, for <span class=\"gold\">the Mali of tomorrow</span>",
         hero_subtitle: "From fast food to transport, from digital to trade: R-Holding brings all your needs under a single brand, in the heart of the Republic of Mali.",
@@ -997,13 +1310,36 @@
         contact_kicker: "Contact", contact_title: "Contact us", contact_intro: "Our team will be happy to answer you.",
         ct_email: "Email", ct_phone: "Phone", ct_siege: "Head office",
         ct_address: "Bacodjocoroni Golf District,<br>Street 101, Door 31 — Bamako, Republic of Mali",
+        services_kicker: "Our services", services_title: "Custom digital solutions",
+        services_intro: "R-Holding develops websites, software and applications for individuals and businesses.",
+        srv1_title: "Website creation", srv1_desc: "Showcase sites, e-commerce and modern platforms adapted to the local market.",
+        srv2_title: "Software development", srv2_desc: "Management software, business tools and custom solutions for your activity.",
+        srv3_title: "Mobile & web applications", srv3_desc: "Intuitive apps for iOS, Android and the web, designed for your users.",
+        srv4_title: "Hosting & maintenance", srv4_desc: "Go live, updates and monitoring of your solutions with peace of mind.",
+        srv5_title: "Search engine optimization (SEO)", srv5_desc: "Boost your visibility on search engines and attract more customers.",
+        srv6_title: "Custom services", srv6_desc: "Forms, integrations and specific projects to meet your needs.",
+        services_cta: "📩 Request a quote",
+        partners_kicker: "Our partners", partners_title: "They support us",
+        partners_intro: "R-Holding works alongside trusted players in Mali.",
+        p1_desc: "Telecommunications operator: mobile, internet and mobile payment in Mali.",
+        p2_desc: "State agency for information technology and communication management of Mali.",
+        p3_desc: "Personal data protection authority, guardian of digital privacy.",
+        p4_desc: "Internet access provider and connectivity solutions in Mali.",
+        f_name: "Full name", f_name_ph: "Your name",
+        f_email: "Email", f_email_ph: "you@email.com",
+        f_phone: "Phone", f_phone_ph: "+223 ...",
+        f_subject: "Subject", f_opt_website: "Website", f_opt_software: "Software", f_opt_app: "Application", f_opt_other: "Other",
+        f_message: "Message", f_message_ph: "Describe your project...",
+        f_submit: "📨 Send message",
+        f_success: "Thank you! Your message has been sent. We will get back to you shortly.",
+        f_error: "An error occurred. Please try again or email us directly at info@r-holding.ml.",
         footer_desc: "A multi-activity vision in Mali: food, technology, cargo, trade and natural resources.",
         footer_legal_siege: "Head office: Bacodjocoroni Golf District, Street 101, Door 31, Bamako — Republic of Mali",
         footer_rights: "All rights reserved.",
         footer_credit: "Website built by R-Holding — Web application development 💻"
       },
       ru: {
-        nav_home: "Главная", nav_activities: "Деятельность", nav_brands: "Бренды", nav_contact: "Контакты", nav_cta: "Связаться с нами",
+        nav_home: "Главная", nav_activities: "Деятельность", nav_services: "Услуги", nav_brands: "Бренды", nav_partners: "Партнёры", nav_contact: "Контакты", nav_cta: "Связаться с нами",
         hero_badge: "🇲🇱 Бамако — Республика Мали",
         hero_title: "R-Holding — Одна группа, одна цель, для <span class=\"gold\">Мали будущего</span>",
         hero_subtitle: "От ресторанного бизнеса до транспорта, от цифровых технологий до торговли: R-Holding объединяет все ваши потребности под одной маркой, в самом сердце Республики Мали.",
@@ -1031,13 +1367,36 @@
         contact_kicker: "Контакты", contact_title: "Свяжитесь с нами", contact_intro: "Наша команда с радостью вам ответит.",
         ct_email: "Эл. почта", ct_phone: "Телефон", ct_siege: "Головной офис",
         ct_address: "Район Бакоджокорони Гольф,<br>Улица 101, Дверь 31 — Бамако, Республика Мали",
+        services_kicker: "Наши услуги", services_title: "Цифровые решения на заказ",
+        services_intro: "R-Holding разрабатывает сайты, программное обеспечение и приложения для частных лиц и компаний.",
+        srv1_title: "Создание сайтов", srv1_desc: "Сайты-визитки, интернет-магазины и современные платформы для местного рынка.",
+        srv2_title: "Разработка ПО", srv2_desc: "Программы управления, бизнес-инструменты и решения под вашу деятельность.",
+        srv3_title: "Мобильные и веб-приложения", srv3_desc: "Интуитивные приложения для iOS, Android и веба для ваших пользователей.",
+        srv4_title: "Хостинг и обслуживание", srv4_desc: "Запуск, обновление и сопровождение ваших решений в полном спокойствии.",
+        srv5_title: "Поисковая оптимизация (SEO)", srv5_desc: "Повысьте видимость в поисковых системах и привлеките больше клиентов.",
+        srv6_title: "Индивидуальные услуги", srv6_desc: "Формы, интеграции и специальные проекты под ваши потребности.",
+        services_cta: "📩 Запросить цену",
+        partners_kicker: "Наши партнёры", partners_title: "Они с нами",
+        partners_intro: "R-Holding работает вместе с надёжными игроками Мали.",
+        p1_desc: "Телекоммуникационный оператор: мобильная связь, интернет и мобильные платежи в Мали.",
+        p2_desc: "Государственное агентство по управлению информатикой и связью Мали.",
+        p3_desc: "Орган по защите персональных данных, гарант цифровой конфиденциальности.",
+        p4_desc: "Провайдер доступа в интернет и решений связи в Мали.",
+        f_name: "Полное имя", f_name_ph: "Ваше имя",
+        f_email: "Эл. почта", f_email_ph: "you@email.com",
+        f_phone: "Телефон", f_phone_ph: "+223 ...",
+        f_subject: "Тема", f_opt_website: "Сайт", f_opt_software: "Программа", f_opt_app: "Приложение", f_opt_other: "Другое",
+        f_message: "Сообщение", f_message_ph: "Опишите ваш проект...",
+        f_submit: "📨 Отправить сообщение",
+        f_success: "Спасибо! Ваше сообщение отправлено. Мы скоро ответим.",
+        f_error: "Произошла ошибка. Попробуйте ещё раз или напишите нам напрямую на info@r-holding.ml.",
         footer_desc: "Многопрофильная деятельность в Мали: питание, технологии, грузоперевозки, торговля и природные ресурсы.",
         footer_legal_siege: "Головной офис: район Бакоджокорони Гольф, улица 101, дверь 31, Бамако — Республика Мали",
         footer_rights: "Все права защищены.",
         footer_credit: "Сайт создан R-Holding — разработка веб-приложений 💻"
       },
       zh: {
-        nav_home: "首页", nav_activities: "业务", nav_brands: "品牌", nav_contact: "联系我们", nav_cta: "联系我们",
+        nav_home: "首页", nav_activities: "业务", nav_services: "服务", nav_brands: "品牌", nav_partners: "合作伙伴", nav_contact: "联系我们", nav_cta: "联系我们",
         hero_badge: "🇲🇱 巴马科 — 马里共和国",
         hero_title: "R-Holding — 一个集团，一个愿景，为了<span class=\"gold\">明天的马里</span>",
         hero_subtitle: "从快餐到运输，从数字科技到贸易：R-Holding 将您的所有需求汇聚于一个品牌之下，位于马里共和国中心。",
@@ -1065,6 +1424,29 @@
         contact_kicker: "联系方式", contact_title: "联系我们", contact_intro: "我们的团队将乐于为您解答。",
         ct_email: "电子邮箱", ct_phone: "电话", ct_siege: "总部",
         ct_address: "Bacodjocoroni Golf 区，<br>101 街，31 号 — 巴马科，马里共和国",
+        services_kicker: "我们的服务", services_title: "定制数字解决方案",
+        services_intro: "R-Holding 为个人和企业开发网站、软件和应用程序。",
+        srv1_title: "网站建设", srv1_desc: "企业展示网站、电子商务和适应本地市场的现代化平台。",
+        srv2_title: "软件开发", srv2_desc: "为您提供管理软件、业务工具和定制解决方案。",
+        srv3_title: "移动应用与网页应用", srv3_desc: "为 iOS、Android 和网页打造的直观应用，贴合您的用户。",
+        srv4_title: "托管与维护", srv4_desc: "让您的解决方案安心上线、更新和运行。",
+        srv5_title: "搜索引擎优化（SEO）", srv5_desc: "提升搜索引擎可见度，吸引更多客户。",
+        srv6_title: "定制服务", srv6_desc: "表单、集成和特定项目，满足您的需求。",
+        services_cta: "📩 索取报价",
+        partners_kicker: "我们的合作伙伴", partners_title: "他们与我们同行",
+        partners_intro: "R-Holding 与马里的可靠机构携手合作。",
+        p1_desc: "电信运营商：马里的移动通信、互联网和移动支付。",
+        p2_desc: "马里国家信息技术与通信管理机构。",
+        p3_desc: "个人数据保护机构，数字隐私的守护者。",
+        p4_desc: "马里的互联网接入服务与连接解决方案提供商。",
+        f_name: "姓名", f_name_ph: "您的姓名",
+        f_email: "电子邮箱", f_email_ph: "you@email.com",
+        f_phone: "电话", f_phone_ph: "+223 ...",
+        f_subject: "主题", f_opt_website: "网站", f_opt_software: "软件", f_opt_app: "应用", f_opt_other: "其他",
+        f_message: "留言", f_message_ph: "描述您的项目...",
+        f_submit: "📨 发送消息",
+        f_success: "谢谢！您的消息已发送，我们将尽快回复。",
+        f_error: "发生错误，请重试或直接发送邮件至 info@r-holding.ml。",
         footer_desc: "在马里的多元化业务：餐饮、科技、货运、贸易和自然资源。",
         footer_legal_siege: "总部：Bacodjocoroni Golf 区，101 街，31 号，巴马科 — 马里共和国",
         footer_rights: "版权所有。",
@@ -1093,6 +1475,12 @@
         const key = el.getAttribute('data-i18n');
         if (translations[lang][key] !== undefined) {
           el.innerHTML = translations[lang][key];
+        }
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang][key] !== undefined) {
+          el.placeholder = translations[lang][key];
         }
       });
       langFlag.textContent = langFlags[lang];
@@ -1164,6 +1552,40 @@
 
     // ===== Année automatique =====
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== Formulaire de contact =====
+    const FORM_ENDPOINT = "https://formspree.io/f/REMPLACEZ_PAR_VOTRE_ID"; // ← remplace par ton endpoint Formspree
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+    const formError = document.getElementById('formError');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        formSuccess.classList.remove('show');
+        formError.classList.remove('show');
+
+        const data = new FormData(contactForm);
+        data.append('_subject', 'Message depuis le site R-Holding');
+
+        try {
+          const resp = await fetch(FORM_ENDPOINT, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (resp.ok) {
+            contactForm.reset();
+            formSuccess.classList.add('show');
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            formError.classList.add('show');
+          }
+        } catch (err) {
+          formError.classList.add('show');
+        }
+      });
+    }
 
     // ===== Initialisation de la langue =====
     applyLang(getSavedLang());
