@@ -1159,6 +1159,8 @@
       <div class="contact-form-wrap reveal">
         <div class="contact-form">
           <form id="contactForm">
+            <input type="hidden" name="access_key" value="78cbcc82-08e7-40ba-b0e5-016fcb0ce155">
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none !important" tabindex="-1" autocomplete="off">
             <div class="form-row">
               <div class="form-group">
                 <label for="cf-name" data-i18n="f_name">Nom complet</label>
@@ -1553,8 +1555,9 @@
     // ===== Année automatique =====
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // ===== Formulaire de contact =====
-    const FORM_ENDPOINT = "https://formspree.io/f/xgawovqg";
+    // ===== Formulaire de contact (Web3Forms) =====
+    const FORM_ENDPOINT = "https://api.web3forms.com/submit";
+    const ACCESS_KEY = "78cbcc82-08e7-40ba-b0e5-016fcb0ce155";
     const contactForm = document.getElementById('contactForm');
     const formSuccess = document.getElementById('formSuccess');
     const formError = document.getElementById('formError');
@@ -1566,10 +1569,16 @@
         formError.classList.remove('show');
 
         const data = new FormData(contactForm);
-        data.append('_subject', 'Message depuis le site R-Holding');
+        data.append('access_key', ACCESS_KEY);
+        data.append('subject', 'Message depuis le site R-Holding');
+        data.append('botcheck', '');
+        const nameField = document.getElementById('cf-name');
         const emailField = document.getElementById('cf-email');
+        if (nameField && nameField.value) {
+          data.append('from_name', nameField.value);
+        }
         if (emailField && emailField.value) {
-          data.append('_replyto', emailField.value);
+          data.append('replyto', emailField.value);
         }
 
         try {
@@ -1578,7 +1587,8 @@
             body: data,
             headers: { 'Accept': 'application/json' }
           });
-          if (resp.ok) {
+          const result = await resp.json().catch(() => null);
+          if (resp.ok && result && result.success) {
             contactForm.reset();
             formSuccess.classList.add('show');
             formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
