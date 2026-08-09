@@ -77,6 +77,7 @@
       --radius: 16px;
       --shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
       --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --font-serif: Georgia, 'Times New Roman', Times, serif;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -90,6 +91,11 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+    }
+
+    b, strong {
+      font-family: var(--font-serif);
+      font-weight: 700;
     }
 
     ::selection { background: var(--accent); color: #12100e; }
