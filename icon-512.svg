@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0a85f"/>
+      <stop offset="50%" stop-color="#c48b3f"/>
+      <stop offset="100%" stop-color="#a06a2a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#c48b3f" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#c48b3f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="#12100e"/>
+  <rect x="32" y="32" width="448" height="448" rx="112" fill="url(#gold)" opacity="0.06"/>
+  <circle cx="256" cy="256" r="220" fill="url(#glow)"/>
+  <rect x="72" y="72" width="368" height="368" rx="92" fill="#1a1713" stroke="url(#gold)" stroke-width="6"/>
+  <rect x="72" y="72" width="368" height="368" rx="92" fill="url(#gold)" opacity="0.1"/>
+  <text x="256" y="330" font-family="Georgia, 'Times New Roman', serif" font-size="190" font-weight="bold" fill="url(#gold)" text-anchor="middle" letter-spacing="-8">RH</text>
+  <text x="256" y="408" font-family="Arial, sans-serif" font-size="30" font-weight="600" fill="#f2ede4" text-anchor="middle" letter-spacing="6">R-HOLDING</text>
+</svg>
