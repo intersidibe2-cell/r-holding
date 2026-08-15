@@ -5,7 +5,7 @@
       <stop offset="50%" stop-color="#c48b3f"/>
       <stop offset="100%" stop-color="#a06a2a"/>
     </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="40%" r="70%">
+    <radialGradient id="glow" cx="50%" cy="42%" r="70%">
       <stop offset="0%" stop-color="#c48b3f" stop-opacity="0.25"/>
       <stop offset="100%" stop-color="#c48b3f" stop-opacity="0"/>
     </radialGradient>
@@ -15,6 +15,6 @@
   <circle cx="256" cy="256" r="220" fill="url(#glow)"/>
   <rect x="72" y="72" width="368" height="368" rx="92" fill="#1a1713" stroke="url(#gold)" stroke-width="6"/>
   <rect x="72" y="72" width="368" height="368" rx="92" fill="url(#gold)" opacity="0.1"/>
-  <text x="256" y="330" font-family="Georgia, 'Times New Roman', serif" font-size="190" font-weight="bold" fill="url(#gold)" text-anchor="middle" letter-spacing="-8">RH</text>
-  <text x="256" y="408" font-family="Arial, sans-serif" font-size="30" font-weight="600" fill="#f2ede4" text-anchor="middle" letter-spacing="6">R-HOLDING</text>
+  <text x="256" y="330" font-family="Georgia, 'Times New Roman', serif" font-size="210" font-weight="bold" fill="url(#gold)" text-anchor="middle">R</text>
+  <text x="256" y="420" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#f2ede4" text-anchor="middle" letter-spacing="10">HOLDING</text>
 </svg>
