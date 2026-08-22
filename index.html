@@ -123,11 +123,11 @@
     .nav {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 14px 20px;
+      padding: 12px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 12px;
     }
 
     .logo {
@@ -138,26 +138,29 @@
       font-size: 1.3rem;
       color: var(--text);
       letter-spacing: 0.5px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .logo-mark {
-      width: 38px;
-      height: 38px;
+      width: 34px;
+      height: 34px;
       border-radius: 10px;
       background: var(--accent-grad);
       display: grid;
       place-items: center;
       font-weight: 800;
       color: #12100e;
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       box-shadow: 0 4px 18px rgba(196, 139, 63, 0.35);
+      flex-shrink: 0;
     }
 
     .logo span em { font-style: normal; color: var(--accent); }
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 18px;
       list-style: none;
       align-items: center;
     }
@@ -165,7 +168,8 @@
     .nav-links a {
       color: var(--text-muted);
       font-weight: 500;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
+      white-space: nowrap;
       position: relative;
       padding: 4px 0;
     }
@@ -192,9 +196,10 @@
       background: var(--accent-grad);
       color: #12100e;
       font-weight: 700;
-      padding: 11px 22px;
+      padding: 10px 18px;
       border-radius: 50px;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
+      white-space: nowrap;
       border: none;
       cursor: pointer;
       transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
@@ -245,9 +250,9 @@
       border: 1px solid var(--border);
       color: var(--text);
       font-family: inherit;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      padding: 9px 14px;
+      padding: 8px 12px;
       border-radius: 50px;
       cursor: pointer;
       transition: border-color .2s ease, background .2s ease;
@@ -943,6 +948,12 @@
     .reveal-delay-3 { transition-delay: .3s; }
 
     /* ---------- Responsive ---------- */
+    @media (min-width: 768px) {
+      .lang-current { display: none; }
+      .lang-btn { padding: 8px 10px; }
+      .nav-links a.nav-cta-text { display: none; }
+    }
+
     @media (max-width: 767px) {
       .nav-links {
         position: fixed;
@@ -1010,7 +1021,7 @@
         <li><a href="#partenaires" data-i18n="nav_partners">Partenaires</a></li>
         <li><a href="#rejoindre" data-i18n="nav_join">Rejoindre</a></li>
         <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-        <li><a href="#contact" class="btn-cta" data-i18n="nav_cta">Nous contacter</a></li>
+        <li><a href="#contact" class="btn-cta nav-cta" data-i18n="nav_cta">Nous contacter</a></li>
       </ul>
 
       <div class="lang-select" id="langSelect">
@@ -1448,7 +1459,7 @@
     // ===== Traductions =====
     const translations = {
       fr: {
-        nav_home: "Accueil", nav_activities: "Activités", nav_services: "Services", nav_brands: "Marques", nav_partners: "Partenaires", nav_join: "Rejoindre", nav_contact: "Contact", nav_cta: "Nous contacter",
+        nav_home: "Accueil", nav_activities: "Activités", nav_services: "Services", nav_brands: "Marques", nav_partners: "Partenaires", nav_join: "Rejoindre", nav_contact: "Contact", nav_cta: "Contacter",
         hero_badge: "🇲🇱 Bamako — République du Mali",
         hero_title: "R-Holding — Un groupe, une vision, pour <span class=\"gold\">le Mali de demain</span>",
         hero_subtitle: "De la restauration au transport, du digital au commerce : R-Holding rassemble tous vos besoins sous une seule marque, au cœur de la République du Mali.",
@@ -1521,7 +1532,7 @@
         join_f_success: "Merci ! Votre candidature a bien été envoyée. Nous vous contacterons rapidement."
       },
       en: {
-        nav_home: "Home", nav_activities: "Activities", nav_services: "Services", nav_brands: "Brands", nav_partners: "Partners", nav_join: "Join", nav_contact: "Contact", nav_cta: "Contact us",
+        nav_home: "Home", nav_activities: "Activities", nav_services: "Services", nav_brands: "Brands", nav_partners: "Partners", nav_join: "Join", nav_contact: "Contact", nav_cta: "Contact",
         hero_badge: "🇲🇱 Bamako — Republic of Mali",
         hero_title: "R-Holding — One group, one vision, for <span class=\"gold\">the Mali of tomorrow</span>",
         hero_subtitle: "From fast food to transport, from digital to trade: R-Holding brings all your needs under a single brand, in the heart of the Republic of Mali.",
@@ -1594,7 +1605,7 @@
         join_f_success: "Thank you! Your application has been sent. We will contact you shortly."
       },
       ru: {
-        nav_home: "Главная", nav_activities: "Деятельность", nav_services: "Услуги", nav_brands: "Бренды", nav_partners: "Партнёры", nav_join: "Присоединиться", nav_contact: "Контакты", nav_cta: "Связаться с нами",
+        nav_home: "Главная", nav_activities: "Деятельность", nav_services: "Услуги", nav_brands: "Бренды", nav_partners: "Партнёры", nav_join: "Присоединиться", nav_contact: "Контакты", nav_cta: "Связаться",
         hero_badge: "🇲🇱 Бамако — Республика Мали",
         hero_title: "R-Holding — Одна группа, одна цель, для <span class=\"gold\">Мали будущего</span>",
         hero_subtitle: "От ресторанного бизнеса до транспорта, от цифровых технологий до торговли: R-Holding объединяет все ваши потребности под одной маркой, в самом сердце Республики Мали.",
@@ -1667,7 +1678,7 @@
         join_f_success: "Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время."
       },
       zh: {
-        nav_home: "首页", nav_activities: "业务", nav_services: "服务", nav_brands: "品牌", nav_partners: "合作伙伴", nav_join: "加入我们", nav_contact: "联系我们", nav_cta: "联系我们",
+        nav_home: "首页", nav_activities: "业务", nav_services: "服务", nav_brands: "品牌", nav_partners: "合作伙伴", nav_join: "加入我们", nav_contact: "联系我们", nav_cta: "联系",
         hero_badge: "🇲🇱 巴马科 — 马里共和国",
         hero_title: "R-Holding — 一个集团，一个愿景，为了<span class=\"gold\">明天的马里</span>",
         hero_subtitle: "从快餐到运输，从数字科技到贸易：R-Holding 将您的所有需求汇聚于一个品牌之下，位于马里共和国中心。",
