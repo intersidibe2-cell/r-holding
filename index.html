@@ -1300,8 +1300,6 @@
         <h3 data-i18n="join_form_title">Envoyez votre candidature</h3>
         <div class="contact-form">
           <form id="joinForm">
-            <input type="hidden" name="access_key" value="78cbcc82-08e7-40ba-b0e5-016fcb0ce155">
-            <input type="checkbox" name="botcheck" class="hidden" style="display:none !important" tabindex="-1" autocomplete="off">
             <div class="form-group">
               <label for="join-type" data-i18n="join_f_type">Type de candidature</label>
               <select id="join-type" name="type" required>
@@ -1384,8 +1382,6 @@
       <div class="contact-form-wrap reveal">
         <div class="contact-form">
           <form id="contactForm">
-            <input type="hidden" name="access_key" value="78cbcc82-08e7-40ba-b0e5-016fcb0ce155">
-            <input type="checkbox" name="botcheck" class="hidden" style="display:none !important" tabindex="-1" autocomplete="off">
             <div class="form-row">
               <div class="form-group">
                 <label for="cf-name" data-i18n="f_name">Nom complet</label>
@@ -1844,8 +1840,8 @@
     // ===== Année automatique =====
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // ===== Formulaire de contact (Web3Forms) =====
-    const FORM_ENDPOINT = "https://api.web3forms.com/submit";
+    // ===== Formulaire de contact (Cloudflare Worker + Resend) =====
+    const FORM_ENDPOINT = "https://form.r-holding.ml";
     const contactForm = document.getElementById('contactForm');
     const formSuccess = document.getElementById('formSuccess');
     const formError = document.getElementById('formError');
@@ -1857,22 +1853,21 @@
         formSuccess.classList.remove('show');
         formError.classList.remove('show');
 
-        const data = new FormData(contactForm);
-        data.append('subject', 'Message depuis le site R-Holding');
-        const nameField = document.getElementById('cf-name');
-        const emailField = document.getElementById('cf-email');
-        if (nameField && nameField.value) {
-          data.append('from_name', nameField.value);
-        }
-        if (emailField && emailField.value) {
-          data.append('replyto', emailField.value);
-        }
+        const data = {
+          name: document.getElementById('cf-name').value,
+          email: document.getElementById('cf-email').value,
+          phone: document.getElementById('cf-phone').value,
+          city: '',
+          type: document.getElementById('cf-subject').value,
+          message: document.getElementById('cf-message').value,
+          subject: 'Message depuis le site R-Holding'
+        };
 
         try {
           const resp = await fetch(FORM_ENDPOINT, {
             method: 'POST',
-            body: data,
-            headers: { 'Accept': 'application/json' }
+            body: JSON.stringify(data),
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
           });
           const result = await resp.json().catch(() => null);
           if (resp.ok && result && result.success) {
@@ -1892,7 +1887,7 @@
       });
     }
 
-    // ===== Formulaire de candidature (Rejoindre) =====
+    // ===== Formulaire de candidature (Cloudflare Worker + Resend) =====
     const joinForm = document.getElementById('joinForm');
     const joinSuccess = document.getElementById('joinSuccess');
     const joinError = document.getElementById('joinError');
@@ -1904,19 +1899,22 @@
         joinSuccess.classList.remove('show');
         joinError.classList.remove('show');
 
-        const data = new FormData(joinForm);
         const typeField = document.getElementById('join-type');
-        data.append('subject', 'Candidature R-Holding — ' + (typeField ? typeField.value : 'Non spécifié'));
-        const nameField = document.getElementById('join-name');
-        const emailField = document.getElementById('join-email');
-        if (nameField && nameField.value) data.append('from_name', nameField.value);
-        if (emailField && emailField.value) data.append('replyto', emailField.value);
+        const data = {
+          name: document.getElementById('join-name').value,
+          email: document.getElementById('join-email').value,
+          phone: document.getElementById('join-phone').value,
+          city: document.getElementById('join-city').value,
+          type: typeField ? typeField.value : '',
+          message: document.getElementById('join-message').value,
+          subject: 'Candidature R-Holding — ' + (typeField ? typeField.value : 'Non spécifié')
+        };
 
         try {
           const resp = await fetch(FORM_ENDPOINT, {
             method: 'POST',
-            body: data,
-            headers: { 'Accept': 'application/json' }
+            body: JSON.stringify(data),
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
           });
           const result = await resp.json().catch(() => null);
           if (resp.ok && result && result.success) {
