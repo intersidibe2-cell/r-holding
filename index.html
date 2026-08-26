@@ -407,13 +407,13 @@
     .section {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 80px 20px;
+      padding: 48px 20px;
     }
 
     .section-head {
       text-align: center;
       max-width: 640px;
-      margin: 0 auto 48px;
+      margin: 0 auto 28px;
     }
 
     .section-head .kicker {
@@ -440,19 +440,36 @@
       height: 3px;
       background: var(--accent-grad);
       border-radius: 3px;
-      margin: 0 auto 24px;
+      margin: 0 auto 16px;
     }
 
     /* ---------- À propos ---------- */
     .about-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 36px;
-      align-items: center;
+      display: block;
     }
 
-    .about-text p { color: var(--text-muted); margin-bottom: 16px; }
+    .about-text { text-align: center; max-width: 800px; margin: 0 auto; }
+
+    .about-text p { color: var(--text-muted); margin-bottom: 16px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto; }
     .about-text p strong { color: var(--text); font-weight: 600; }
+
+    .sub-section { margin-top: 40px; text-align: center; }
+    .sub-section h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .sub-divider {
+      width: 40px;
+      height: 2px;
+      background: var(--accent-grad);
+      border-radius: 2px;
+      margin: 0 auto 20px;
+    }
 
     .inline-link {
       color: var(--accent);
@@ -997,6 +1014,10 @@
       .join-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
+    .sub-contact { margin-top: 40px; }
+    .sub-contact .contact-grid { grid-template-columns: 1fr; }
+    @media (min-width: 640px) { .sub-contact .contact-grid { grid-template-columns: repeat(3, 1fr); } }
+
     /* ---------- Animations ---------- */
     .reveal {
       opacity: 0;
@@ -1044,19 +1065,12 @@
     }
 
     @media (min-width: 640px) {
-      .activities-grid { grid-template-columns: repeat(2, 1fr); }
       .brands-grid { grid-template-columns: repeat(2, 1fr); }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .partners-grid { grid-template-columns: repeat(2, 1fr); }
       .form-row { grid-template-columns: 1fr 1fr; }
     }
 
     @media (min-width: 900px) {
-      .activities-grid { grid-template-columns: repeat(3, 1fr); }
       .brands-grid { grid-template-columns: repeat(3, 1fr); }
-      .services-grid { grid-template-columns: repeat(3, 1fr); }
-      .partners-grid { grid-template-columns: repeat(4, 1fr); }
-      .about-grid { grid-template-columns: 1.2fr 1fr; }
       .contact-grid { grid-template-columns: repeat(3, 1fr); }
       .footer-inner { flex-direction: column; }
     }
@@ -1121,7 +1135,7 @@
       </div>
     </section>
 
-    <!-- ===== À propos ===== -->
+    <!-- ===== À propos + Activités + Services ===== -->
     <section class="section" id="apropos">
       <div class="section-head reveal">
         <span class="kicker" data-i18n="about_kicker">À propos</span>
@@ -1129,60 +1143,46 @@
         <div class="divider"></div>
       </div>
 
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <p data-i18n="about_p1"><strong>R-Holding</strong> est un groupe diversifié basé à <strong>Bamako</strong>, opérant dans la restauration rapide, le développement digital, le transport, le commerce général et les ressources naturelles. À travers nos marques — <a href="https://solodesir.com" target="_blank" rel="noopener" class="inline-link"><strong>R-Solo</strong></a>, <a href="https://rmarket.ml" target="_blank" rel="noopener" class="inline-link"><strong>R-Market</strong></a>, <a href="https://rchicken.ml" target="_blank" rel="noopener" class="inline-link"><strong>R-Chicken</strong></a> et <strong>R-Security</strong> — nous servons des milliers de Maliens.</p>
+      <div class="about-text reveal">
+        <p data-i18n="about_p1"><strong>R-Holding</strong> est un groupe diversifié basé à <strong>Bamako</strong>, opérant dans la restauration rapide, le développement digital, le transport, le commerce général et les ressources naturelles. À travers nos marques — <a href="https://solodesir.com" target="_blank" rel="noopener" class="inline-link"><strong>R-Solo</strong></a>, <a href="https://rmarket.ml" target="_blank" rel="noopener" class="inline-link"><strong>R-Market</strong></a>, <a href="https://rchicken.ml" target="_blank" rel="noopener" class="inline-link"><strong>R-Chicken</strong></a> et <strong>R-Security</strong> — nous servons des milliers de Maliens.</p>
+      </div>
+
+      <div class="sub-section reveal" id="activites">
+        <h3 data-i18n="act_kicker">Nos activités</h3>
+        <div class="sub-divider"></div>
+        <div class="act-compact">
+          <span class="act-tag">🍔 Restauration rapide</span>
+          <span class="act-tag">💻 Développement web</span>
+          <span class="act-tag">✈️ Cargo aérien & maritime</span>
+          <span class="act-tag">🛒 Commerce général</span>
+          <span class="act-tag">📦 Biens & services</span>
+          <span class="act-tag">⛏️ Ressources naturelles</span>
         </div>
+      </div>
 
+      <div class="sub-section reveal" id="services">
+        <h3 data-i18n="services_kicker">Nos services</h3>
+        <div class="sub-divider"></div>
+        <div class="act-compact">
+          <span class="act-tag">🌐 Sites internet</span>
+          <span class="act-tag">💻 Logiciels de gestion</span>
+          <span class="act-tag">📱 Applications mobiles</span>
+          <span class="act-tag">🚀 Hébergement</span>
+          <span class="act-tag">📈 SEO</span>
+          <span class="act-tag">🛠️ Prestations sur mesure</span>
+        </div>
+        <div class="services-cta" style="margin-top:24px">
+          <a href="#rejoindre" class="btn-cta" data-i18n="services_cta">📩 Demander un devis</a>
+        </div>
       </div>
     </section>
 
-    <!-- ===== Activités ===== -->
-    <section class="section" id="activites">
-      <div class="section-head reveal">
-        <span class="kicker" data-i18n="act_kicker">Nos activités</span>
-        <h2 data-i18n="act_title">Un groupe, plusieurs métiers</h2>
-        <div class="divider"></div>
-      </div>
-
-      <div class="act-compact reveal">
-        <span class="act-tag">🍔 Restauration rapide</span>
-        <span class="act-tag">💻 Développement web</span>
-        <span class="act-tag">✈️ Cargo aérien & maritime</span>
-        <span class="act-tag">🛒 Commerce général</span>
-        <span class="act-tag">📦 Biens & services</span>
-        <span class="act-tag">⛏️ Ressources naturelles</span>
-      </div>
-    </section>
-
-    <!-- ===== Services ===== -->
-    <section class="section" id="services">
-      <div class="section-head reveal">
-        <span class="kicker" data-i18n="services_kicker">Nos services</span>
-        <h2 data-i18n="services_title">Des solutions numériques sur mesure</h2>
-        <div class="divider"></div>
-      </div>
-
-      <div class="act-compact reveal">
-        <span class="act-tag">🌐 Sites internet</span>
-        <span class="act-tag">💻 Logiciels de gestion</span>
-        <span class="act-tag">📱 Applications mobiles</span>
-        <span class="act-tag">🚀 Hébergement</span>
-        <span class="act-tag">📈 SEO</span>
-        <span class="act-tag">🛠️ Prestations sur mesure</span>
-      </div>
-
-      <div class="services-cta reveal">
-        <a href="#contact" class="btn-cta" data-i18n="services_cta">📩 Demander un devis</a>
-      </div>
-    </section>
-
-    <!-- ===== Marques ===== -->
+    <!-- ===== Marques + Partenaires ===== -->
     <section class="section" id="marques">
       <div class="section-head reveal">
         <span class="kicker" data-i18n="brands_kicker">Nos marques</span>
         <h2 data-i18n="brands_title">Les marques du groupe</h2>
-        <p data-i18n="brands_intro">Des plateformes et services pensés pour le marché malien.</p>
+        <p data-i18n="brands_intro">Des plateformes et services pensés pour le territoire malien.</p>
         <div class="divider"></div>
       </div>
 
@@ -1197,51 +1197,46 @@
         <article class="brand-card reveal reveal-delay-1">
           <img src="r-market-logo.png" alt="R-Market" class="brand-img">
           <span class="domain">rmarket.ml</span>
-          <p data-i18n="rmarket_desc">Plateforme de commerce en ligne : achetez et vendez en toute simplicité.</p>
+          <p data-i18n="rmarket_desc">Plateforme d'échange en ligne : achetez et vendez en toute simplicité.</p>
           <a href="https://rmarket.ml" target="_blank" rel="noopener" class="brand-link" data-i18n="visit_btn">Visiter le site</a>
         </article>
 
         <article class="brand-card reveal reveal-delay-2">
           <img src="r-chicken-logo.png" alt="R-Chicken" class="brand-img">
           <span class="domain">rchicken.ml</span>
-          <p data-i18n="rchicken_desc">Nos services de restauration rapide : du poulet savoureux, vite et bien servi.</p>
+          <p data-i18n="rchicken_desc">Restauration rapide : du poulet savoureux, vite et bien servi.</p>
           <a href="https://rchicken.ml" target="_blank" rel="noopener" class="brand-link" data-i18n="visit_btn">Visiter le site</a>
         </article>
 
         <article class="brand-card reveal reveal-delay-3">
           <div class="brand-logo">R-Security<span class="dot">.</span></div>
           <span class="domain"><span class="badge-soon" data-i18n="coming_soon">Bientôt disponible</span></span>
-          <p data-i18n="rsecurity_desc">Plateforme de protection numérique : signalement d'arnaques et vérification de numéros contre la fraude Mobile Money et la cybercriminalité.</p>
+          <p data-i18n="rsecurity_desc">Protection numérique : signalement d'arnaques et vérification de numéros contre la fraude Mobile Money et la cybercriminalité.</p>
           <a href="#contact" class="brand-link" data-i18n="contact_btn">Nous contacter</a>
         </article>
       </div>
-    </section>
 
-    <!-- ===== Partenaires ===== -->
-    <section class="section" id="partenaires">
-      <div class="section-head reveal">
-        <span class="kicker" data-i18n="partners_kicker">Nos partenaires</span>
-        <h2 data-i18n="partners_title">Ils nous accompagnent</h2>
-        <div class="divider"></div>
-      </div>
-
-      <div class="partners-compact reveal">
-        <span class="partner-name">Orange Mali</span>
-        <span class="partner-dot">·</span>
-        <span class="partner-name">AGETIC</span>
-        <span class="partner-dot">·</span>
-        <span class="partner-name">APDP</span>
-        <span class="partner-dot">·</span>
-        <span class="partner-name">Afribone</span>
+      <div class="sub-section reveal" id="partenaires">
+        <h3 data-i18n="partners_kicker">Nos partenaires</h3>
+        <div class="sub-divider"></div>
+        <div class="partners-compact">
+          <span class="partner-name">Orange Mali</span>
+          <span class="partner-dot">·</span>
+          <span class="partner-name">AGETIC</span>
+          <span class="partner-dot">·</span>
+          <span class="partner-name">APDP</span>
+          <span class="partner-dot">·</span>
+          <span class="partner-name">Afribone</span>
+        </div>
       </div>
     </section>
 
-    <!-- ===== Rejoindre ===== -->
+    <!-- ===== Rejoindre + Contact ===== -->
     <section class="section" id="rejoindre">
       <div class="section-head reveal">
         <span class="kicker" data-i18n="join_kicker">🤝 Rejoignez-nous</span>
         <h2 data-i18n="join_title">Rejoignez R-Holding</h2>
-        <p data-i18n="join_intro">R-Holding ouvre ses portes aux entrepreneurs et investisseurs qui partagent notre vision. Un écosystème en pleine croissance — franchise, commerce, investissement — rejoignez-nous.</p>
+        <p data-i18n="join_intro">R-Holding ouvre ses portes aux entrepreneurs et investisseurs qui partagent notre vision.</p>
         <div class="divider"></div>
       </div>
 
@@ -1332,39 +1327,33 @@
           <div class="form-error" id="joinError"><span data-i18n="f_error">Une erreur est survenue. Veuillez réessayer ou nous écrire directement à info@r-holding.ml.</span> <span id="joinErrorText"></span></div>
         </div>
       </div>
-    </section>
 
-    <!-- ===== Contact ===== -->
-    <section class="section" id="contact">
-      <div class="section-head reveal">
-        <span class="kicker" data-i18n="contact_kicker">Contact</span>
-        <h2 data-i18n="contact_title">Contactez-nous</h2>
-        <p data-i18n="contact_intro">Notre équipe vous répond avec plaisir.</p>
-        <div class="divider"></div>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-card reveal">
-          <div class="icon">📧</div>
-          <div>
-            <h3 data-i18n="ct_email">Email</h3>
-            <a href="mailto:info@r-holding.ml">info@r-holding.ml</a>
-          </div>
+      <div class="sub-contact reveal" id="contact">
+        <div class="sub-section">
+          <h3 data-i18n="contact_title">Contactez-nous</h3>
+          <div class="sub-divider"></div>
         </div>
-
-        <div class="contact-card reveal reveal-delay-1">
-          <div class="icon">📞</div>
-          <div>
-            <h3 data-i18n="ct_phone">Téléphone</h3>
-            <a href="tel:+22383806129">+223 83 80 61 29</a>
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <div class="icon">📧</div>
+            <div>
+              <h3 data-i18n="ct_email">Email</h3>
+              <a href="mailto:info@r-holding.ml">info@r-holding.ml</a>
+            </div>
           </div>
-        </div>
-
-        <div class="contact-card reveal reveal-delay-2">
-          <div class="icon">📍</div>
-          <div>
-            <h3 data-i18n="ct_siege">Notre bureau</h3>
-            <span data-i18n="ct_address">Quartier Bacodjocoroni Golf,<br>Rue 101, Porte 31 — Bamako, République du Mali</span>
+          <div class="contact-card reveal reveal-delay-1">
+            <div class="icon">📞</div>
+            <div>
+              <h3 data-i18n="ct_phone">Téléphone</h3>
+              <a href="tel:+22383806129">+223 83 80 61 29</a>
+            </div>
+          </div>
+          <div class="contact-card reveal reveal-delay-2">
+            <div class="icon">📍</div>
+            <div>
+              <h3 data-i18n="ct_siege">Notre bureau</h3>
+              <span data-i18n="ct_address">Quartier Bacodjocoroni Golf,<br>Rue 101, Porte 31 — Bamako, République du Mali</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1402,7 +1391,7 @@
         nav_home: "Accueil", nav_activities: "Activités", nav_services: "Services", nav_brands: "Marques", nav_partners: "Partenaires", nav_join: "Rejoindre", nav_contact: "Contact", nav_cta: "Contacter",
         hero_badge: "🇲🇱 Bamako — République du Mali",
         hero_title: "R-Holding — Un groupe, une vision, pour <span class=\"gold\">le Mali de demain</span>",
-        hero_subtitle: "De la restauration au transport, du digital à l'activité commerciale : R-Holding rassemble tous vos besoins sous une seule marque, au cœur de la République du Mali.",
+        hero_subtitle: "De la restauration au transport, du digital au commerce : R-Holding rassemble tous vos besoins sous une seule marque, au cœur de la République du Mali.",
         hero_cta: "📞 Contactez-nous", hero_outline: "Découvrir nos activités",
         stat_activities: "Activités", stat_brands: "Marques du groupe", stat_vision: "Vision",
         about_kicker: "À propos", about_title: "Qui sommes-nous ?",
@@ -1453,7 +1442,7 @@
         nav_home: "Home", nav_activities: "Activities", nav_services: "Services", nav_brands: "Brands", nav_partners: "Partners", nav_join: "Join", nav_contact: "Contact", nav_cta: "Contact",
         hero_badge: "🇲🇱 Bamako — Republic of Mali",
         hero_title: "R-Holding — One group, one vision, for <span class=\"gold\">the Mali of tomorrow</span>",
-        hero_subtitle: "From fast food to transport, from digital to trade: R-Holding brings all your needs under one brand, in the heart of Mali.",
+        hero_subtitle: "From fast food to transport, from digital to trade: R-Holding brings all your needs under a single brand, in the heart of the Republic of Mali.",
         hero_cta: "📞 Contact us", hero_outline: "Discover our activities",
         stat_activities: "Activities", stat_brands: "Group brands", stat_vision: "Vision",
         about_kicker: "About us", about_title: "Who are we?",
@@ -1504,7 +1493,7 @@
         nav_home: "Главная", nav_activities: "Деятельность", nav_services: "Услуги", nav_brands: "Бренды", nav_partners: "Партнёры", nav_join: "Присоединиться", nav_contact: "Контакты", nav_cta: "Связаться",
         hero_badge: "🇲🇱 Бамако — Республика Мали",
         hero_title: "R-Holding — Одна группа, одна цель, для <span class=\"gold\">Мали будущего</span>",
-        hero_subtitle: "От общественного питания до транспорта, от цифровых технологий до торговли: R-Holding объединяет все ваши потребности под одной маркой, в сердце Мали.",
+        hero_subtitle: "От ресторанного бизнеса до транспорта, от цифровых технологий до торговли: R-Holding объединяет все ваши потребности под одной маркой, в самом сердце Республики Мали.",
         hero_cta: "📞 Связаться с нами", hero_outline: "Наша деятельность",
         stat_activities: "Направлений", stat_brands: "Брендов группы", stat_vision: "Видение",
         about_kicker: "О нас", about_title: "Кто мы?",
@@ -1555,7 +1544,7 @@
         nav_home: "首页", nav_activities: "业务", nav_services: "服务", nav_brands: "品牌", nav_partners: "合作伙伴", nav_join: "加入我们", nav_contact: "联系我们", nav_cta: "联系",
         hero_badge: "🇲🇱 巴马科 — 马里共和国",
         hero_title: "R-Holding — 一个集团，一个愿景，为了<span class=\"gold\">明天的马里</span>",
-        hero_subtitle: "从快餐到运输，从数字科技到贸易：R-Holding 将您的所有需求汇聚于一个品牌之下，位于马里中心。",
+        hero_subtitle: "从快餐到运输，从数字科技到贸易：R-Holding 将您的所有需求汇聚于一个品牌之下，位于马里共和国中心。",
         hero_cta: "📞 联系我们", hero_outline: "了解我们的业务",
         stat_activities: "项业务", stat_brands: "集团品牌", stat_vision: "愿景",
         about_kicker: "关于我们", about_title: "我们是谁？",
