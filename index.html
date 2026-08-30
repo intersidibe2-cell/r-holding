@@ -589,6 +589,43 @@
     .brand-card--soon { opacity: 0.65; }
     .brand-card--soon:hover { opacity: 0.85; }
 
+    /* ---------- Brand Modal ---------- */
+    .brand-modal { display: none; position: fixed; inset: 0; z-index: 1000; align-items: center; justify-content: center; padding: 20px; }
+    .brand-modal.active { display: flex; }
+
+    .brand-modal-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); animation: fadeIn .25s ease; }
+
+    .brand-modal-content { position: relative; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px 32px 32px; max-width: 440px; width: 100%; text-align: center; animation: slideUp .3s ease; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+
+    .brand-modal-close { position: absolute; top: 14px; right: 16px; background: none; border: none; color: var(--text-muted); font-size: 1.6rem; cursor: pointer; line-height: 1; padding: 4px 8px; transition: color .2s; }
+    .brand-modal-close:hover { color: var(--text); }
+
+    .brand-modal-img { width: 100px; height: 100px; object-fit: contain; border-radius: 18px; margin: 0 auto 16px; display: block; }
+
+    .brand-modal-name { font-size: 1.4rem; font-weight: 800; margin-bottom: 6px; }
+
+    .brand-modal-domain { color: var(--accent); font-size: 0.85rem; display: block; margin-bottom: 16px; }
+
+    .brand-modal-desc { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px; }
+
+    .brand-modal-actions { display: flex; flex-direction: column; gap: 10px; }
+
+    .brand-modal-visit { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: var(--accent-grad); color: #fff; font-weight: 700; font-size: 0.95rem; padding: 12px 24px; border-radius: 10px; text-decoration: none; transition: transform .2s, box-shadow .2s; }
+    .brand-modal-visit:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(196,139,63,0.35); }
+
+    .brand-modal-contact { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--border); color: var(--text-muted); font-weight: 600; font-size: 0.9rem; padding: 10px 20px; border-radius: 10px; text-decoration: none; transition: border-color .2s, color .2s; }
+    .brand-modal-contact:hover { border-color: var(--accent); color: var(--accent); }
+
+    .brand-modal-soon { display: inline-block; background: rgba(196,139,63,0.12); border: 1px solid var(--accent); border-radius: 50px; color: var(--accent-light); font-size: 0.8rem; font-weight: 600; padding: 6px 16px; margin-bottom: 16px; }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 500px) {
+      .brand-modal-content { padding: 32px 20px 24px; }
+      .brand-modal-img { width: 80px; height: 80px; }
+    }
+
     .brand-logo {
       font-size: 2rem;
       font-weight: 800;
@@ -1197,33 +1234,33 @@
       </div>
 
       <div class="brands-grid">
-        <a href="https://rchicken.ml" target="_blank" rel="noopener" class="brand-card reveal">
+        <article class="brand-card reveal" data-brand="rchicken" style="cursor:pointer">
           <img src="r-chicken-logo.png" alt="R-Chicken" class="brand-img">
           <span class="domain">rchicken.ml</span>
           <p data-i18n="rchicken_desc">Restauration rapide : du poulet savoureux, vite et bien servi.</p>
           <span class="brand-link" data-i18n="visit_btn">Visiter le site</span>
-        </a>
+        </article>
 
-        <a href="https://rmarket.ml" target="_blank" rel="noopener" class="brand-card reveal reveal-delay-1">
+        <article class="brand-card reveal reveal-delay-1" data-brand="rmarket" style="cursor:pointer">
           <img src="r-market-logo.png" alt="R-Market" class="brand-img">
           <span class="domain">rmarket.ml</span>
           <p data-i18n="rmarket_desc">Plateforme d'échange en ligne : achetez et vendez en toute simplicité.</p>
           <span class="brand-link" data-i18n="visit_btn">Visiter le site</span>
-        </a>
+        </article>
 
-        <a href="#contact" class="brand-card brand-card--soon reveal reveal-delay-2">
+        <article class="brand-card brand-card--soon reveal reveal-delay-2" data-brand="rsolo" style="cursor:pointer">
           <img src="r-solo-logo.png" alt="R-Solo" class="brand-img">
           <span class="domain"><span class="badge-soon" data-i18n="coming_soon">Bientôt disponible</span></span>
           <p data-i18n="solo_desc">Plateforme de mise en relation sérieuse au Mali.</p>
           <span class="brand-link" data-i18n="contact_btn">Nous contacter</span>
-        </a>
+        </article>
 
-        <a href="#contact" class="brand-card brand-card--soon reveal reveal-delay-3">
+        <article class="brand-card brand-card--soon reveal reveal-delay-3" data-brand="rsecurity" style="cursor:pointer">
           <img src="r-security-logo-1024px.png" alt="R-Security" class="brand-img">
           <span class="domain"><span class="badge-soon" data-i18n="coming_soon">Bientôt disponible</span></span>
           <p data-i18n="rsecurity_desc">Protection numérique : signalement d'arnaques et vérification de numéros contre la fraude Mobile Money et la cybercriminalité.</p>
           <span class="brand-link" data-i18n="contact_btn">Nous contacter</span>
-        </a>
+        </article>
       </div>
 
       <div class="sub-section reveal" id="partenaires">
@@ -1370,6 +1407,19 @@
     </section>
   </main>
 
+  <!-- ===== Modal Marques ===== -->
+  <div class="brand-modal" id="brandModal">
+    <div class="brand-modal-overlay" id="brandModalOverlay"></div>
+    <div class="brand-modal-content">
+      <button class="brand-modal-close" id="brandModalClose">&times;</button>
+      <img class="brand-modal-img" id="brandModalImg" src="" alt="">
+      <h3 class="brand-modal-name" id="brandModalName"></h3>
+      <span class="brand-modal-domain" id="brandModalDomain"></span>
+      <p class="brand-modal-desc" id="brandModalDesc"></p>
+      <div class="brand-modal-actions" id="brandModalActions"></div>
+    </div>
+  </div>
+
   <!-- ===== Footer ===== -->
   <footer>
     <div class="footer-inner">
@@ -1412,9 +1462,11 @@
         solo_desc: "Plateforme de mise en relation sérieuse au Mali.",
         rmarket_desc: "Plateforme d'échange en ligne : achetez et vendez en toute simplicité.",
         rchicken_desc: "Restauration rapide : du poulet savoureux, vite et bien servi.",
+        rchicken_name: "R-Chicken", rmarket_name: "R-Market", rsolo_name: "R-Solo", rsecurity_name: "R-Security",
         coming_soon: "Bientôt disponible",
         rsecurity_desc: "Protection numérique : signalement d'arnaques et vérification de numéros contre la fraude Mobile Money et la cybercriminalité.",
         visit_btn: "Visiter le site", contact_btn: "Nous contacter",
+        modal_visit: "Visiter le site →", modal_contact: "Nous contacter →",
         contact_kicker: "Contact", contact_title: "Contactez-nous",
         ct_email: "Email", ct_phone: "Téléphone", ct_siege: "Notre bureau",
         ct_address: "Quartier Bacodjocoroni Golf,<br>Rue 101, Porte 31 — Bamako, République du Mali",
@@ -1463,9 +1515,11 @@
         solo_desc: "A serious matchmaking platform in Mali.",
         rmarket_desc: "Online exchange platform: buy and sell with ease.",
         rchicken_desc: "Fast food: tasty chicken, quick and well served.",
+        rchicken_name: "R-Chicken", rmarket_name: "R-Market", rsolo_name: "R-Solo", rsecurity_name: "R-Security",
         coming_soon: "Coming soon",
         rsecurity_desc: "Digital protection: report scams and verify numbers against Mobile Money fraud and cybercrime.",
         visit_btn: "Visit website", contact_btn: "Contact us",
+        modal_visit: "Visit website →", modal_contact: "Contact us →",
         contact_kicker: "Contact", contact_title: "Contact us",
         ct_email: "Email", ct_phone: "Phone", ct_siege: "Our office",
         ct_address: "Bacodjocoroni Golf District,<br>Street 101, Door 31 — Bamako, Republic of Mali",
@@ -1514,9 +1568,11 @@
         solo_desc: "Серьёзная платформа знакомств в Мали.",
         rmarket_desc: "Онлайн-платформа обмена: покупайте и продавайте легко.",
         rchicken_desc: "Быстрое питание: вкусная курица, быстро и качественно.",
+        rchicken_name: "R-Chicken", rmarket_name: "R-Market", rsolo_name: "R-Solo", rsecurity_name: "R-Security",
         coming_soon: "Скоро",
         rsecurity_desc: "Цифровая защита: сообщайте о мошенничестве и проверяйте номера против мобильного мошенничества и киберпреступности.",
         visit_btn: "Посетить сайт", contact_btn: "Связаться с нами",
+        modal_visit: "Посетить сайт →", modal_contact: "Связаться с нами →",
         contact_kicker: "Контакты", contact_title: "Свяжитесь с нами",
         ct_email: "Эл. почта", ct_phone: "Телефон", ct_siege: "Наш офис",
         ct_address: "Район Бакоджокорони Гольф,<br>Улица 101, Дверь 31 — Бамако, Республика Мали",
@@ -1565,9 +1621,11 @@
         solo_desc: "马里的严肃交友平台。",
         rmarket_desc: "在线交换平台：轻松买卖。",
         rchicken_desc: "快餐服务：美味鸡肉，快捷周到。",
+        rchicken_name: "R-Chicken", rmarket_name: "R-Market", rsolo_name: "R-Solo", rsecurity_name: "R-Security",
         coming_soon: "即将推出",
         rsecurity_desc: "数字保护：举报诈骗并验证号码，防范移动支付欺诈和网络犯罪。",
         visit_btn: "访问网站", contact_btn: "联系我们",
+        modal_visit: "访问网站 →", modal_contact: "联系我们 →",
         contact_kicker: "联系方式", contact_title: "联系我们",
         ct_email: "电子邮箱", ct_phone: "电话", ct_siege: "我们的办公室",
         ct_address: "Bacodjocoroni Golf 区，<br>101 街，31 号 — 巴马科，马里共和国",
@@ -1749,6 +1807,62 @@
         }
       });
     }
+
+    // ===== Brand Modal =====
+    const brandModal = document.getElementById('brandModal');
+    const brandModalOverlay = document.getElementById('brandModalOverlay');
+    const brandModalClose = document.getElementById('brandModalClose');
+    const brandModalImg = document.getElementById('brandModalImg');
+    const brandModalName = document.getElementById('brandModalName');
+    const brandModalDomain = document.getElementById('brandModalDomain');
+    const brandModalDesc = document.getElementById('brandModalDesc');
+    const brandModalActions = document.getElementById('brandModalActions');
+
+    const brandsData = {
+      rchicken: { img: 'r-chicken-logo.png', url: 'https://rchicken.ml' },
+      rmarket:  { img: 'r-market-logo.png',  url: 'https://rmarket.ml' },
+      rsolo:    { img: 'r-solo-logo.png',    url: '' },
+      rsecurity:{ img: 'r-security-logo-1024px.png', url: '' }
+    };
+
+    function openBrandModal(key) {
+      const t = translations[currentLang] || translations.fr;
+      const b = brandsData[key];
+      if (!b) return;
+
+      brandModalImg.src = b.img;
+      brandModalImg.alt = key;
+      brandModalName.textContent = t[key + '_name'] || key;
+      brandModalDesc.textContent = t[key + '_desc'] || '';
+
+      const isSoon = (key === 'rsolo' || key === 'rsecurity');
+      brandModalDomain.innerHTML = isSoon
+        ? '<span class="brand-modal-soon">' + t.coming_soon + '</span>'
+        : b.url.replace('https://', '');
+
+      let actionsHTML = '';
+      if (!isSoon && b.url) {
+        actionsHTML += '<a class="brand-modal-visit" href="' + b.url + '" target="_blank" rel="noopener">' + t.modal_visit + '</a>';
+      }
+      actionsHTML += '<a class="brand-modal-contact" href="#contact" onclick="closeBrandModal()">' + t.modal_contact + '</a>';
+      brandModalActions.innerHTML = actionsHTML;
+
+      brandModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBrandModal() {
+      brandModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-brand]').forEach(card => {
+      card.addEventListener('click', () => openBrandModal(card.dataset.brand));
+    });
+
+    brandModalClose.addEventListener('click', closeBrandModal);
+    brandModalOverlay.addEventListener('click', closeBrandModal);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBrandModal(); });
 
     // ===== Initialisation de la langue =====
     applyLang(getSavedLang());
