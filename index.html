@@ -580,9 +580,14 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      text-decoration: none;
+      color: inherit;
     }
 
     .brand-card:hover { transform: translateY(-6px); border-color: rgba(196, 139, 63, 0.45); box-shadow: var(--shadow); }
+
+    .brand-card--soon { opacity: 0.65; }
+    .brand-card--soon:hover { opacity: 0.85; }
 
     .brand-logo {
       font-size: 2rem;
@@ -624,10 +629,11 @@
       gap: 6px;
       font-weight: 600;
       font-size: 0.9rem;
+      color: var(--accent);
     }
 
     .brand-link::after { content: "→"; transition: transform .2s ease; }
-    .brand-link:hover::after { transform: translateX(4px); }
+    .brand-card:hover .brand-link::after { transform: translateX(4px); }
 
     /* ---------- Services ---------- */
     .services-grid {
@@ -1191,33 +1197,33 @@
       </div>
 
       <div class="brands-grid">
-        <article class="brand-card reveal">
-          <img src="r-solo-logo.png" alt="R-Solo" class="brand-img">
-          <span class="domain"><span class="badge-soon" data-i18n="coming_soon">Bientôt disponible</span></span>
-          <p data-i18n="solo_desc">Plateforme de mise en relation sérieuse au Mali.</p>
-          <a href="#contact" class="brand-link" data-i18n="contact_btn">Nous contacter</a>
-        </article>
-
-        <article class="brand-card reveal reveal-delay-1">
-          <img src="r-market-logo.png" alt="R-Market" class="brand-img">
-          <span class="domain">rmarket.ml</span>
-          <p data-i18n="rmarket_desc">Plateforme d'échange en ligne : achetez et vendez en toute simplicité.</p>
-          <a href="https://rmarket.ml" target="_blank" rel="noopener" class="brand-link" data-i18n="visit_btn">Visiter le site</a>
-        </article>
-
-        <article class="brand-card reveal reveal-delay-2">
+        <a href="https://rchicken.ml" target="_blank" rel="noopener" class="brand-card reveal">
           <img src="r-chicken-logo.png" alt="R-Chicken" class="brand-img">
           <span class="domain">rchicken.ml</span>
           <p data-i18n="rchicken_desc">Restauration rapide : du poulet savoureux, vite et bien servi.</p>
-          <a href="https://rchicken.ml" target="_blank" rel="noopener" class="brand-link" data-i18n="visit_btn">Visiter le site</a>
-        </article>
+          <span class="brand-link" data-i18n="visit_btn">Visiter le site</span>
+        </a>
 
-        <article class="brand-card reveal reveal-delay-3">
+        <a href="https://rmarket.ml" target="_blank" rel="noopener" class="brand-card reveal reveal-delay-1">
+          <img src="r-market-logo.png" alt="R-Market" class="brand-img">
+          <span class="domain">rmarket.ml</span>
+          <p data-i18n="rmarket_desc">Plateforme d'échange en ligne : achetez et vendez en toute simplicité.</p>
+          <span class="brand-link" data-i18n="visit_btn">Visiter le site</span>
+        </a>
+
+        <a href="#contact" class="brand-card brand-card--soon reveal reveal-delay-2">
+          <img src="r-solo-logo.png" alt="R-Solo" class="brand-img">
+          <span class="domain"><span class="badge-soon" data-i18n="coming_soon">Bientôt disponible</span></span>
+          <p data-i18n="solo_desc">Plateforme de mise en relation sérieuse au Mali.</p>
+          <span class="brand-link" data-i18n="contact_btn">Nous contacter</span>
+        </a>
+
+        <a href="#contact" class="brand-card brand-card--soon reveal reveal-delay-3">
           <div class="brand-logo">R-Security<span class="dot">.</span></div>
           <span class="domain"><span class="badge-soon" data-i18n="coming_soon">Bientôt disponible</span></span>
           <p data-i18n="rsecurity_desc">Protection numérique : signalement d'arnaques et vérification de numéros contre la fraude Mobile Money et la cybercriminalité.</p>
-          <a href="#contact" class="brand-link" data-i18n="contact_btn">Nous contacter</a>
-        </article>
+          <span class="brand-link" data-i18n="contact_btn">Nous contacter</span>
+        </a>
       </div>
 
       <div class="sub-section reveal" id="partenaires">
