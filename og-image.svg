@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1713"/>
+      <stop offset="100%" stop-color="#12100e"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e0a85f"/>
+      <stop offset="50%" stop-color="#c48b3f"/>
+      <stop offset="100%" stop-color="#a06a2a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="4" fill="url(#gold)"/>
+  <rect x="0" y="626" width="1200" height="4" fill="url(#gold)"/>
+  <text x="600" y="260" text-anchor="middle" font-family="Georgia, serif" font-weight="800" font-size="72" fill="#f2ede4" letter-spacing="2">R-HOLDING</text>
+  <text x="600" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-weight="400" font-size="28" fill="#c48b3f" letter-spacing="4">ROUSKI-HOLDING SARL</text>
+  <line x1="480" y1="350" x2="720" y2="350" stroke="#c48b3f" stroke-width="2" opacity="0.5"/>
+  <text x="600" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-weight="400" font-size="22" fill="#b3ab9d">Investissement et développement au Mali et à l'international</text>
+  <text x="600" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-weight="600" font-size="18" fill="#b3ab9d">R-Chicken · R-Market · R-Solo · R-Security</text>
+  <text x="600" y="540" text-anchor="middle" font-family="Arial, sans-serif" font-weight="400" font-size="16" fill="#7a7268">www.r-holding.ml</text>
+</svg>
