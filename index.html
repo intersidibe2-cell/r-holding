@@ -1488,7 +1488,7 @@
         act_kicker: "Nos activités", act_title: "Un groupe, plusieurs métiers",
         brands_kicker: "Nos marques", brands_title: "Les marques du groupe",
         brands_intro: "Des plateformes et services pensés pour le territoire malien.",
-        solo_desc: "Solo = plateforme mobile-first Emploi, Services & Mariage au Mali — permet de publier/chercher des annonces gratuites, avec un bot WhatsApp/Telegram pour l'acquisition, et l'IA Djeli pour la rédaction assistée. 100% discret, par téléphone uniquement.",
+        solo_desc: "Solo = plateforme mobile-first Emploi, Services & Mariage au Mali. Annonces gratuites, bot WhatsApp/Telegram, IA Djeli. 100% discret.",
         rmarket_desc: "Plateforme d'échange en ligne : achetez et vendez en toute simplicité.",
         rchicken_desc: "Restauration rapide : du poulet savoureux, vite et bien servi.",
         rchicken_name: "R-Chicken", rmarket_name: "R-Market", rsolo_name: "R-Solo", rsecurity_name: "R-Security",
@@ -1541,7 +1541,7 @@
         act_kicker: "Our activities", act_title: "One group, many trades",
         brands_kicker: "Our brands", brands_title: "The group brands",
         brands_intro: "Platforms and services designed for the Malian territory.",
-        solo_desc: "Solo = mobile-first platform for Jobs, Services & Marriage in Mali — post/search free listings, with a WhatsApp/Telegram acquisition bot, and Djeli AI for assisted writing. 100% private, phone only.",
+        solo_desc: "Solo = mobile-first Jobs, Services & Marriage platform in Mali. Free listings, WhatsApp/Telegram bot, Djeli AI. 100% private.",
         rmarket_desc: "Online exchange platform: buy and sell with ease.",
         rchicken_desc: "Fast food: tasty chicken, quick and well served.",
         rchicken_name: "R-Chicken", rmarket_name: "R-Market", rsolo_name: "R-Solo", rsecurity_name: "R-Security",
@@ -1594,7 +1594,7 @@
         act_kicker: "Наша деятельность", act_title: "Одна группа — много сфер",
         brands_kicker: "Наши бренды", brands_title: "Бренды группы",
         brands_intro: "Платформы и услуги, созданные для малийского рынка.",
-        solo_desc: "Solo — мобильная платформа для работы, услуг и брака в Мали — публикация/поиск бесплатных объявлений, бот WhatsApp/Telegram для привлечения и ИИ Djeli для помощи в написании. 100% конфиденциально, только по телефону.",
+        solo_desc: "Solo — мобильная платформа для работы, услуг и брака в Мали. Бесплатные объявления, бот WhatsApp/Telegram, ИИ Djeli. 100% конфиденциально.",
         rmarket_desc: "Онлайн-платформа обмена: покупайте и продавайте легко.",
         rchicken_desc: "Быстрое питание: вкусная курица, быстро и качественно.",
         rchicken_name: "R-Chicken", rmarket_name: "R-Market", rsolo_name: "R-Solo", rsecurity_name: "R-Security",
@@ -1647,7 +1647,7 @@
         act_kicker: "我们的业务", act_title: "一个集团，多种行业",
         brands_kicker: "我们的品牌", brands_title: "集团品牌",
         brands_intro: "专为马里市场打造的平台与服务。",
-        solo_desc: "Solo = 移动优先平台，涵盖马里的就业、服务与婚姻——可发布/搜索免费公告，配备 WhatsApp/Telegram 获取用户机器人，以及 Djeli AI 辅助写作。100% 隐私，仅限手机。",
+        solo_desc: "Solo = 移动优先平台，涵盖马里就业、服务与婚姻。免费公告，WhatsApp/Telegram 机器人，Djeli AI。100% 隐私。",
         rmarket_desc: "在线交换平台：轻松买卖。",
         rchicken_desc: "快餐服务：美味鸡肉，快捷周到。",
         rchicken_name: "R-Chicken", rmarket_name: "R-Market", rsolo_name: "R-Solo", rsecurity_name: "R-Security",
@@ -1855,7 +1855,7 @@
     };
 
     function openBrandModal(key) {
-      const t = translations[currentLang] || translations.fr;
+      const t = translations[getSavedLang()] || translations.fr;
       const b = brandsData[key];
       if (!b) return;
 
