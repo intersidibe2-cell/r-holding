@@ -1361,6 +1361,7 @@
         <h3 data-i18n="join_form_title">Envoyez votre candidature</h3>
         <div class="contact-form">
           <form id="joinForm">
+            <input type="text" id="join-website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;pointer-events:none">
             <div class="form-group">
               <label for="join-type" data-i18n="join_f_type">Type de candidature</label>
               <select id="join-type" name="type" required>
@@ -1812,6 +1813,7 @@
           city: document.getElementById('join-city').value,
           type: typeField ? typeField.value : '',
           message: document.getElementById('join-message').value,
+          website: (document.getElementById('join-website') || {}).value || '',
           subject: 'Candidature R-Holding — ' + (typeField ? typeField.value : 'Non spécifié')
         };
 
