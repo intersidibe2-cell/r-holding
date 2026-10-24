@@ -6,8 +6,8 @@
   <title>R-Holding — Un groupe, une vision, pour le Mali et au-delà</title>
 
   <!-- SEO -->
-  <meta name="description" content="R-Holding — Un groupe, une vision, pour le Mali et au-delà. Rouski-Holding SARL : investissement et développement au Mali et à l'international. R-Chicken, R-Market, R-Métier, R-Billet, R-Talent, R-Security.">
-  <meta name="keywords" content="R-Holding, Rouski-Holding, holding, Mali, Bamako, restauration rapide, applications web, cargo, import export, commerce général, R-Chicken, rchicken.ml, R-Market, rmarket.ml, R-Métier, metier.rmarket.ml, R-Billet, billet.rmarket.ml, R-Talent, rtalent.rmarket.ml, R-Security, protection numérique, cybercriminalité, Mobile Money">
+  <meta name="description" content="R-Holding — Un groupe, une vision, pour le Mali et au-delà. Rouski-Holding SARL : investissement et développement au Mali et à l'international. R-Chicken, R-Market, R-Métier, R-Billet, R-Talent.">
+  <meta name="keywords" content="R-Holding, Rouski-Holding, holding, Mali, Bamako, restauration rapide, applications web, cargo, import export, commerce général, R-Chicken, rchicken.ml, R-Market, rmarket.ml, R-Métier, metier.rmarket.ml, R-Billet, billet.rmarket.ml, R-Talent, rtalent.rmarket.ml, paiement Mobile Money">
   <meta name="author" content="Rouski-Holding SARL">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#12100e">
@@ -75,7 +75,7 @@
     "areaServed": [
       { "@type": "Country", "name": "Mali" }
     ],
-    "description": "Groupe d'investissement et de développement basé à Bamako, présent au Mali et à l'international. R-Chicken, R-Market, R-Métier, R-Billet, R-Talent, R-Security.",
+    "description": "Groupe d'investissement et de développement basé à Bamako, présent au Mali et à l'international. R-Chicken, R-Market, R-Métier, R-Billet, R-Talent.",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+22383806129",
@@ -1169,6 +1169,7 @@
 
     @media (min-width: 900px) {
       .brands-grid { grid-template-columns: repeat(3, 1fr); }
+      .brands-grid--duo { grid-template-columns: repeat(2, 1fr); }
       .contact-grid { grid-template-columns: repeat(3, 1fr); }
       .footer-inner { flex-direction: column; }
     }
@@ -1228,7 +1229,8 @@
 
       <div class="hero-stats reveal reveal-delay-3">
         <div class="stat"><b>6</b><small data-i18n="stat_activities">Activités</small></div>
-        <div class="stat"><b>6</b><small data-i18n="stat_brands">Marques &amp; services</small></div>
+        <div class="stat"><b>2</b><small data-i18n="stat_brands">Marques</small></div>
+        <div class="stat"><b>3</b><small data-i18n="stat_services">Services</small></div>
         <div class="stat"><b>1</b><small data-i18n="stat_vision">Vision</small></div>
       </div>
     </section>
@@ -1242,7 +1244,7 @@
       </div>
 
       <div class="about-text reveal">
-        <p data-i18n="about_p1"><strong>R-Holding</strong> est un groupe d'investissement et de développement basé à <strong>Bamako</strong>, présent au Mali et à l'international. À travers ses filiales et ses plateformes — <strong>R-Chicken</strong>, <strong>R-Market</strong> (avec ses services <strong>R-Métier</strong>, <strong>R-Billet</strong> et <strong>R-Talent</strong>) et <strong>R-Security</strong> — le groupe couvre la restauration rapide, le commerce en ligne, l'emploi et les services, la billetterie aérienne, les talents créatifs et la sécurité numérique, au service des entreprises et des particuliers.</p>
+        <p data-i18n="about_p1"><strong>R-Holding</strong> est un groupe d'investissement et de développement basé à <strong>Bamako</strong>, présent au Mali et à l'international. À travers ses filiales et ses plateformes — <strong>R-Chicken</strong>, <strong>R-Market</strong> (avec ses services <strong>R-Métier</strong>, <strong>R-Billet</strong> et <strong>R-Talent</strong>) — le groupe couvre la restauration rapide, le commerce en ligne, l'emploi et les services, la billetterie aérienne et les talents créatifs, au service des entreprises et des particuliers.</p>
       </div>
 
       <div class="sub-section reveal" id="activites">
@@ -1284,7 +1286,7 @@
         <div class="divider"></div>
       </div>
 
-      <div class="brands-grid">
+      <div class="brands-grid brands-grid--duo">
         <article class="brand-card reveal" data-brand="rchicken" style="cursor:pointer">
           <img src="r-chicken-logo.png" alt="R-Chicken" class="brand-img">
           <span class="domain">rchicken.ml</span>
@@ -1297,13 +1299,6 @@
           <span class="domain">rmarket.ml</span>
           <p data-i18n="rmarket_desc">Plateforme d'échange en ligne : achetez et vendez en toute simplicité.</p>
           <span class="brand-link" data-i18n="visit_btn">Visiter le site</span>
-        </article>
-
-        <article class="brand-card brand-card--soon reveal reveal-delay-2" data-brand="rsecurity" style="cursor:pointer">
-          <img src="r-security-logo-1024px.png" alt="R-Security" class="brand-img">
-          <span class="domain"><span class="badge-soon" data-i18n="coming_soon">Bientôt disponible</span></span>
-          <p data-i18n="rsecurity_desc">Protection numérique : signalement d'arnaques et vérification de numéros contre la fraude Mobile Money et la cybercriminalité.</p>
-          <span class="brand-link" data-i18n="contact_btn">Nous contacter</span>
         </article>
       </div>
 
@@ -1530,18 +1525,17 @@
         hero_title: "R-Holding — Un groupe, une vision, pour <span class=\"gold\">le Mali et au-delà</span>",
         hero_subtitle: "Investissement, développement et innovation au service du Mali et de l'international.",
         hero_cta: "📞 Contactez-nous", hero_outline: "Découvrir nos activités",
-        stat_activities: "Activités", stat_brands: "Marques & services", stat_vision: "Vision",
+        stat_activities: "Activités", stat_brands: "Marques", stat_services: "Services", stat_vision: "Vision",
         about_kicker: "À propos", about_title: "Qui sommes-nous ?",
-        about_p1: "<strong>R-Holding</strong> est un groupe d'investissement et de développement basé à <strong>Bamako</strong>, présent au Mali et à l'international. À travers ses filiales et ses plateformes — <strong>R-Chicken</strong>, <strong>R-Market</strong> (avec ses services <strong>R-Métier</strong>, <strong>R-Billet</strong> et <strong>R-Talent</strong>) et <strong>R-Security</strong> — le groupe couvre la restauration rapide, le commerce en ligne, l'emploi et les services, la billetterie aérienne, les talents créatifs et la sécurité numérique, au service des entreprises et des particuliers.",
+        about_p1: "<strong>R-Holding</strong> est un groupe d'investissement et de développement basé à <strong>Bamako</strong>, présent au Mali et à l'international. À travers ses filiales et ses plateformes — <strong>R-Chicken</strong>, <strong>R-Market</strong> (avec ses services <strong>R-Métier</strong>, <strong>R-Billet</strong> et <strong>R-Talent</strong>) — le groupe couvre la restauration rapide, le commerce en ligne, l'emploi et les services, la billetterie aérienne et les talents créatifs, au service des entreprises et des particuliers.",
         act_kicker: "Nos activités", act_title: "Un groupe, plusieurs métiers",
         brands_kicker: "Nos marques", brands_title: "Les marques du groupe",
         brands_intro: "Des plateformes et services pensés pour le territoire malien.",
         rmetier_desc: "Emploi & services au Mali : publiez votre annonce gratuitement, trouvez un travail ou un service.",
         rmarket_desc: "Plateforme d'échange en ligne : achetez et vendez en toute simplicité.",
         rchicken_desc: "Restauration rapide : du poulet savoureux, vite et bien servi.",
-        rchicken_name: "R-Chicken", rmarket_name: "R-Market", rmetier_name: "R-Métier", rsecurity_name: "R-Security", rbillet_name: "R-Billet", rtalent_name: "R-Talent",
+        rchicken_name: "R-Chicken", rmarket_name: "R-Market", rmetier_name: "R-Métier", rbillet_name: "R-Billet", rtalent_name: "R-Talent",
         coming_soon: "Bientôt disponible",
-        rsecurity_desc: "Protection numérique : signalement d'arnaques et vérification de numéros contre la fraude Mobile Money et la cybercriminalité.",
         rbillet_desc: "Billetterie aérienne : réservez vos vols vers le Mali et l'Afrique de l'Ouest.",
         rtalent_desc: "Le talent malien récompensé : soutenez les créateurs, vidéos exclusives et cadeaux.",
         rmarket_services_kicker: "Les services R-Market",
@@ -1587,18 +1581,17 @@
         hero_title: "R-Holding — One group, one vision, for <span class=\"gold\">Mali and beyond</span>",
         hero_subtitle: "Investment, development and innovation at the service of Mali and the international market.",
         hero_cta: "📞 Contact us", hero_outline: "Discover our activities",
-        stat_activities: "Activities", stat_brands: "Brands & services", stat_vision: "Vision",
+        stat_activities: "Activities", stat_brands: "Brands", stat_services: "Services", stat_vision: "Vision",
         about_kicker: "About us", about_title: "Who are we?",
-        about_p1: "<strong>R-Holding</strong> is an investment and development group based in <strong>Bamako</strong>, operating in Mali and internationally. Through its subsidiaries and platforms — <strong>R-Chicken</strong>, <strong>R-Market</strong> (with its services <strong>R-Métier</strong>, <strong>R-Billet</strong> and <strong>R-Talent</strong>) and <strong>R-Security</strong> — the group covers fast food, online commerce, jobs and services, air ticketing, creative talent and digital security, serving businesses and individuals alike.",
+        about_p1: "<strong>R-Holding</strong> is an investment and development group based in <strong>Bamako</strong>, operating in Mali and internationally. Through its subsidiaries and platforms — <strong>R-Chicken</strong>, <strong>R-Market</strong> (with its services <strong>R-Métier</strong>, <strong>R-Billet</strong> and <strong>R-Talent</strong>) — the group covers fast food, online commerce, jobs and services, air ticketing and creative talent, serving businesses and individuals alike.",
         act_kicker: "Our activities", act_title: "One group, many trades",
         brands_kicker: "Our brands", brands_title: "The group brands",
         brands_intro: "Platforms and services designed for the Malian territory.",
         rmetier_desc: "Jobs & services in Mali: post your listing for free, find work or a service.",
         rmarket_desc: "Online exchange platform: buy and sell with ease.",
         rchicken_desc: "Fast food: tasty chicken, quick and well served.",
-        rchicken_name: "R-Chicken", rmarket_name: "R-Market", rmetier_name: "R-Métier", rsecurity_name: "R-Security", rbillet_name: "R-Billet", rtalent_name: "R-Talent",
+        rchicken_name: "R-Chicken", rmarket_name: "R-Market", rmetier_name: "R-Métier", rbillet_name: "R-Billet", rtalent_name: "R-Talent",
         coming_soon: "Coming soon",
-        rsecurity_desc: "Digital protection: report scams and verify numbers against Mobile Money fraud and cybercrime.",
         rbillet_desc: "Air ticketing: book your flights to Mali and West Africa.",
         rtalent_desc: "Malian talent rewarded: support creators, exclusive videos and gifts.",
         rmarket_services_kicker: "R-Market services",
@@ -1644,18 +1637,17 @@
         hero_title: "R-Holding — Одна группа, одна цель — <span class=\"gold\">Мали и за его пределами</span>",
         hero_subtitle: "Инвестиции, развитие и инновации на службе Мали и международного рынка.",
         hero_cta: "📞 Связаться с нами", hero_outline: "Наша деятельность",
-        stat_activities: "Направлений", stat_brands: "Бренды и сервисы", stat_vision: "Видение",
+        stat_activities: "Направлений", stat_brands: "Бренды", stat_services: "Сервисы", stat_vision: "Видение",
         about_kicker: "О нас", about_title: "Кто мы?",
-        about_p1: "<strong>R-Holding</strong> — инвестиционно-девелоперская группа со штаб-квартирой в <strong>Бамако</strong>, работающая в Мали и на международном уровне. Через свои дочерние компании и платформы — <strong>R-Chicken</strong>, <strong>R-Market</strong> (с сервисами <strong>R-Métier</strong>, <strong>R-Billet</strong> и <strong>R-Talent</strong>) и <strong>R-Security</strong> — группа охватывает общественное питание, онлайн-торговлю, трудоустройство и услуги, авиабилеты, творческие таланты и цифровую безопасность, обслуживая бизнес и частных лиц.",
+        about_p1: "<strong>R-Holding</strong> — инвестиционно-девелоперская группа со штаб-квартирой в <strong>Бамако</strong>, работающая в Мали и на международном уровне. Через свои дочерние компании и платформы — <strong>R-Chicken</strong>, <strong>R-Market</strong> (с сервисами <strong>R-Métier</strong>, <strong>R-Billet</strong> и <strong>R-Talent</strong>) — группа охватывает общественное питание, онлайн-торговлю, трудоустройство и услуги, авиабилеты и творческие таланты, обслуживая бизнес и частных лиц.",
         act_kicker: "Наша деятельность", act_title: "Одна группа — много сфер",
         brands_kicker: "Наши бренды", brands_title: "Бренды группы",
         brands_intro: "Платформы и услуги, созданные для малийского рынка.",
         rmetier_desc: "Работа и услуги в Мали: разместите объявление бесплатно, найдите работу или услугу.",
         rmarket_desc: "Онлайн-платформа обмена: покупайте и продавайте легко.",
         rchicken_desc: "Быстрое питание: вкусная курица, быстро и качественно.",
-        rchicken_name: "R-Chicken", rmarket_name: "R-Market", rmetier_name: "R-Métier", rsecurity_name: "R-Security", rbillet_name: "R-Billet", rtalent_name: "R-Talent",
+        rchicken_name: "R-Chicken", rmarket_name: "R-Market", rmetier_name: "R-Métier", rbillet_name: "R-Billet", rtalent_name: "R-Talent",
         coming_soon: "Скоро",
-        rsecurity_desc: "Цифровая защита: сообщайте о мошенничестве и проверяйте номера против мобильного мошенничества и киберпреступности.",
         rbillet_desc: "Авиабилеты: бронируйте рейсы в Мали и Западную Африку.",
         rtalent_desc: "Малийские таланты: поддерживайте авторов, эксклюзивные видео и подарки.",
         rmarket_services_kicker: "Сервисы R-Market",
@@ -1701,18 +1693,17 @@
         hero_title: "R-Holding — 一个集团，一个愿景，覆盖<span class=\"gold\">马里与全球</span>",
         hero_subtitle: "投资、发展与创新，服务于马里及国际市场。",
         hero_cta: "📞 联系我们", hero_outline: "了解我们的业务",
-        stat_activities: "项业务", stat_brands: "品牌与服务", stat_vision: "愿景",
+        stat_activities: "项业务", stat_brands: "品牌", stat_services: "服务", stat_vision: "愿景",
         about_kicker: "关于我们", about_title: "我们是谁？",
-        about_p1: "<strong>R-Holding</strong> 是一家总部位于<strong>巴马科</strong>的投资与发展集团，业务覆盖马里及国际市场。通过旗下子公司与平台——<strong>R-Chicken</strong>、<strong>R-Market</strong>（及其服务 <strong>R-Métier</strong>、<strong>R-Billet</strong> 和 <strong>R-Talent</strong>）以及 <strong>R-Security</strong>——集团涵盖快餐、在线贸易、就业与服务、机票预订、创作者人才和数字安全领域，为企业及个人客户提供服务。",
+        about_p1: "<strong>R-Holding</strong> 是一家总部位于<strong>巴马科</strong>的投资与发展集团，业务覆盖马里及国际市场。通过旗下子公司与平台——<strong>R-Chicken</strong>、<strong>R-Market</strong>（及其服务 <strong>R-Métier</strong>、<strong>R-Billet</strong> 和 <strong>R-Talent</strong>）——集团涵盖快餐、在线贸易、就业与服务、机票预订和创作者人才领域，为企业及个人客户提供服务。",
         act_kicker: "我们的业务", act_title: "一个集团，多种行业",
         brands_kicker: "我们的品牌", brands_title: "集团品牌",
         brands_intro: "专为马里市场打造的平台与服务。",
         rmetier_desc: "马里的就业与服务：免费发布信息，寻找工作或服务。",
         rmarket_desc: "在线交换平台：轻松买卖。",
         rchicken_desc: "快餐服务：美味鸡肉，快捷周到。",
-        rchicken_name: "R-Chicken", rmarket_name: "R-Market", rmetier_name: "R-Métier", rsecurity_name: "R-Security", rbillet_name: "R-Billet", rtalent_name: "R-Talent",
+        rchicken_name: "R-Chicken", rmarket_name: "R-Market", rmetier_name: "R-Métier", rbillet_name: "R-Billet", rtalent_name: "R-Talent",
         coming_soon: "即将推出",
-        rsecurity_desc: "数字保护：举报诈骗并验证号码，防范移动支付欺诈和网络犯罪。",
         rbillet_desc: "机票预订：预订飞往马里及西非的航班。",
         rtalent_desc: "马里人才：支持创作者、独家视频与礼物。",
         rmarket_services_kicker: "R-Market 服务",
@@ -1917,9 +1908,10 @@
       rmarket:  { img: 'r-market-logo.png',  url: 'https://rmarket.ml' },
       rmetier:  { img: 'r-metier-logo.png',  url: 'https://metier.rmarket.ml/solo.html' },
       rbillet:  { img: 'r-billet-logo.svg',  url: 'https://billet.rmarket.ml/' },
-      rtalent:  { img: 'r-talent-logo.svg',  url: 'https://rtalent.rmarket.ml/' },
-      rsecurity:{ img: 'r-security-logo-1024px.png', url: '' }
+      rtalent:  { img: 'r-talent-logo.svg',  url: 'https://rtalent.rmarket.ml/' }
     };
+
+    const SOON_BRANDS = [];
 
     function openBrandModal(key) {
       const t = translations[getSavedLang()] || translations.fr;
@@ -1931,7 +1923,7 @@
       brandModalName.textContent = t[key + '_name'] || key;
       brandModalDesc.textContent = t[key + '_desc'] || '';
 
-      const isSoon = (key === 'rsecurity');
+      const isSoon = SOON_BRANDS.includes(key);
       brandModalDomain.innerHTML = isSoon
         ? '<span class="brand-modal-soon">' + t.coming_soon + '</span>'
         : b.url.replace('https://', '');
